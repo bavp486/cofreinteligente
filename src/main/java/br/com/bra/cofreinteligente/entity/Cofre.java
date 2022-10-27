@@ -6,6 +6,6 @@ import javax.persistence.Id;
 @Entity
 public class Cofre {
     @Id
-    private long numero_Cofre;
+    private Long numero_Cofre;
     private String tipo_Cofre;
 }
