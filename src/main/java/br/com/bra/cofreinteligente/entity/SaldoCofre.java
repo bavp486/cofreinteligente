@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class SaldoCofre {
     @Id
     private Long id;
-    private long id_Movimentacao;
+    private Long id_Movimentacao;
     private LocalDateTime data;
     private BigDecimal saldo;
 }

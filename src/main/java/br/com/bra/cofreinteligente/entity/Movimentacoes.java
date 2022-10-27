@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Movimentacoes {
     @Id
     private Long id;
-    private long numero_Cofre;
+    private Long numero_Cofre;
     private LocalDateTime data;
     private BigDecimal valor_Recolhido;
 }
