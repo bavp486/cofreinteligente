@@ -1,4 +1,4 @@
-package br.com.bra.cofreinteligente.Entity;
+package br.com.bra.cofreinteligente.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-public class SaldoConta {
+public class Movimentacoes {
     @Id
     private Long id;
-    private Long id_Conta;
+    private long numero_Cofre;
     private LocalDateTime data;
-    private BigDecimal saldo;
+    private BigDecimal valor_Recolhido;
 }

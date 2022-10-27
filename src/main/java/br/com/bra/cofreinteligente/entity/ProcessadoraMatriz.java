@@ -1,10 +1,10 @@
-package br.com.bra.cofreinteligente.Entity;
+package br.com.bra.cofreinteligente.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class ClienteMatriz {
+public class ProcessadoraMatriz {
     @Id
     private Long id;
     private Long id_Endereco;

@@ -1,4 +1,4 @@
-package br.com.bra.cofreinteligente.Entity;
+package br.com.bra.cofreinteligente.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

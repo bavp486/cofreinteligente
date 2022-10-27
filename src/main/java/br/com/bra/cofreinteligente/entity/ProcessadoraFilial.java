@@ -1,13 +1,14 @@
-package br.com.bra.cofreinteligente.Entity;
+package br.com.bra.cofreinteligente.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class ProcessadoraMatriz {
+public class ProcessadoraFilial {
     @Id
     private Long id;
-    private Long id_Endereco;
     private String cnpj;
+    private Long id_Matriz;
+    private Long id_Endereco;
     private String nome;
 }
