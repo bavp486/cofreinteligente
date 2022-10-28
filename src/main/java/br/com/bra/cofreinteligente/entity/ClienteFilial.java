@@ -1,12 +1,15 @@
 package br.com.bra.cofreinteligente.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ClienteFilial {
     @Id
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "cliente_matriz_id")
+    private ClienteMatriz clienteMatriz;
+
     private Long id_Matriz;
     private Long id_Endereco;
     private Long id_Cofre;
@@ -14,4 +17,12 @@ public class ClienteFilial {
     private Long numero_Contrato;
     private String cnpj;
     private String nome;
+
+    public ClienteMatriz getClienteMatriz() {
+        return clienteMatriz;
+    }
+
+    public void setClienteMatriz(ClienteMatriz clienteMatriz) {
+        this.clienteMatriz = clienteMatriz;
+    }
 }
