@@ -1,8 +1,11 @@
 package br.com.bra.cofreinteligente.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class ClienteFilial {
     @Id
     private Long id;

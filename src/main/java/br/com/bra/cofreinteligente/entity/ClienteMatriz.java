@@ -11,7 +11,7 @@ public class ClienteMatriz {
 
     @Id
     private Long id;
-    @OneToMany (mappedBy = "id_Matriz")
+    @OneToMany(mappedBy = "clienteFilial_id")
     private Set<ClienteFilial>  clienteFilial;
     private Long id_Endereco;
     private String cnpj;
