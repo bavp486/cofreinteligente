@@ -1,15 +1,22 @@
 package br.com.bra.cofreinteligente.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToOne(mappedBy = "id_conta")
+    private ClienteFilial clienteFilial;
+
+    @OneToMany(mappedBy = "id_conta")
+    private Set<SaldoConta> saldoContas;
+
+
+
     private int agencia;
     private Long conta;
 }
