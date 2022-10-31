@@ -11,8 +11,15 @@ import java.util.Set;
 public class Cofre {
 
     @Id
-    private Long numero_Cofre;
-    @OneToMany(mappedBy = "movimentacoes_id")
+    private Long numero_cofre;
+
+    @OneToMany(mappedBy = "numero_cofre")
     private Set<Movimentacoes> movimentacoes;
-    private String tipo_Cofre;
+
+    @OneToMany(mappedBy = "id_cofre")
+    private Set<ClienteFilial> clienteFilials;
+
+
+
+    private String tipo_cofre;
 }

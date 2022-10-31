@@ -19,8 +19,12 @@ public class Movimentacoes {
     @JoinColumn(name="numero_Cofre_id")
     private Cofre cofre;
 
+    @ManyToOne
+    @JoinColumn(name = "id_movimentacao")
+    private SaldoCofre saldoCofre;
+
     @Column(nullable = false)
-    private Long numero_Cofre;
+    private Long numero_cofre;
 
     @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;
