@@ -1,8 +1,11 @@
 package br.com.bra.cofreinteligente.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class ClienteFilial {
     @Id
     private Long id;
@@ -11,10 +14,25 @@ public class ClienteFilial {
     private ClienteMatriz clienteMatriz;
 
     private Long id_Matriz;
-    private Long id_Endereco;
-    private Long id_Cofre;
-    private Long id_Conta;
-    private Long numero_Contrato;
+    @OneToOne(mappedBy = "id")
+    private Endereco endereco;
+
+    @OneToOne(mappedBy = "id")
+    private Conta conta;
+
+    @ManyToOne
+    @JoinColumn(name = "numero_contrato")
+    private Contratos contratos;
+
+    @ManyToOne
+    @JoinColumn(name = "numero_cofre")
+    private Cofre cofre;
+
+
+    private Long id_endereco;
+    private Long id_cofre;
+    private Long id_conta;
+    private Long num_contrato;
     private String cnpj;
     private String nome;
 

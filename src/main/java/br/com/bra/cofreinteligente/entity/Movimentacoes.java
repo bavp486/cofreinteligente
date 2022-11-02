@@ -1,15 +1,33 @@
 package br.com.bra.cofreinteligente.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 public class Movimentacoes {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long numero_Cofre;
+
+    @ManyToOne
+    @JoinColumn(name="numero_Cofre_id")
+    private Cofre cofre;
+
+    @ManyToOne
+    @JoinColumn(name = "id_movimentacao")
+    private SaldoCofre saldoCofre;
+
+    @Column(nullable = false)
+    private Long numero_cofre;
+
+    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;
+
     private BigDecimal valor_Recolhido;
 }
