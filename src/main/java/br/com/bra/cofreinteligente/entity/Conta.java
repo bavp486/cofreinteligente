@@ -9,8 +9,8 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(mappedBy = "id_conta")
-    private ClienteFilial clienteFilial;
+    //@OneToOne(mappedBy = "id_conta")
+ //   private ClienteFilial clienteFilial;
 
     @OneToMany(mappedBy = "id_conta")
     private Set<SaldoConta> saldoContas;
@@ -19,4 +19,6 @@ public class Conta {
 
     private int agencia;
     private Long conta;
+
+
 }

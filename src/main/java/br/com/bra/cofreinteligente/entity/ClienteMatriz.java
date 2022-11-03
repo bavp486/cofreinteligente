@@ -1,9 +1,6 @@
 package br.com.bra.cofreinteligente.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Set;
 
 
@@ -12,10 +9,10 @@ public class ClienteMatriz {
 
     @Id
     private Long id;
-    @OneToMany(mappedBy = "clienteFilial_id")
+    @OneToMany(mappedBy = "id_Matriz")
     private Set<ClienteFilial>  clienteFilial;
 
-    @OneToOne(mappedBy = "id")
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
 

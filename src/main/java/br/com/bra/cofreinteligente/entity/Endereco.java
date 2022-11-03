@@ -11,7 +11,7 @@ public class Endereco {
     @OneToOne(mappedBy = "id_endereco")
     private ClienteMatriz clienteMatriz;
 
-    @OneToOne(mappedBy = "id_endereco")
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.PERSIST, mappedBy = "id_endereco")
     private ClienteFilial clienteFilial;
 
     @OneToOne(mappedBy = "id_endereco")

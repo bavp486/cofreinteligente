@@ -19,10 +19,6 @@ public class Movimentacoes {
     @JoinColumn(name="numero_Cofre_id")
     private Cofre cofre;
 
-    @ManyToOne
-    @JoinColumn(name = "id_movimentacao")
-    private SaldoCofre saldoCofre;
-
     @Column(nullable = false)
     private Long numero_cofre;
 

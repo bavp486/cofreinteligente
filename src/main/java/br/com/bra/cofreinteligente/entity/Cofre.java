@@ -2,9 +2,7 @@ package br.com.bra.cofreinteligente.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -16,10 +14,16 @@ public class Cofre {
     @OneToMany(mappedBy = "numero_cofre")
     private Set<Movimentacoes> movimentacoes;
 
-    @OneToMany(mappedBy = "id_cofre")
-    private Set<ClienteFilial> clienteFilials;
+    @OneToMany(mappedBy = "numero_cofre")
+    private Set<SaldoCofre> saldoCofres;
 
+//    @OneToMany(mappedBy = "id_cofre")
+//    private Set<ClienteFilial> clienteFiliais;
 
+    @ManyToOne
+    //@JoinColumn(name = "cliente_filial_id")
+    private ClienteFilial clienteFilial;
+    private Long id_ClienteFilial;
 
     private String tipo_cofre;
 }
