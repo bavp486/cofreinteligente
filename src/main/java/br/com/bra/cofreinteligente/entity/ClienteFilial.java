@@ -17,7 +17,7 @@ public class ClienteFilial {
 
     private Long id_Matriz;
 
-    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.PERSIST)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Endereco endereco;
 
   // @OneToOne (cascade = CascadeType.ALL)

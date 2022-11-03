@@ -8,16 +8,16 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(mappedBy = "id_endereco")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ClienteMatriz clienteMatriz;
 
-    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.PERSIST, mappedBy = "id_endereco")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ClienteFilial clienteFilial;
 
-    @OneToOne(mappedBy = "id_endereco")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ProcessadoraMatriz processadoraMatriz;
 
-    @OneToOne(mappedBy = "id_endereco")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ProcessadoraFilial processadoraFilial;
 
     private String rua;
