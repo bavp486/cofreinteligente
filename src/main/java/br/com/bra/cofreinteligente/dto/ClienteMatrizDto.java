@@ -4,9 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * A DTO for the {@link br.com.bra.cofreinteligente.entity.ClienteMatriz} entity
- */
+
 @Data
 public class ClienteMatrizDto implements Serializable {
     private final Long id;

@@ -11,7 +11,7 @@ public class ProcessadoraMatriz {
     @OneToMany(mappedBy = "id")
     private Set<ProcessadoraFilial> processadoraFiliais;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Endereco endereco;
 
     private Long id_endereco;

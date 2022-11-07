@@ -12,7 +12,7 @@ public class ClienteMatriz {
     @OneToMany(mappedBy = "id_Matriz")
     private Set<ClienteFilial>  clienteFilial;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Endereco endereco;
 
 

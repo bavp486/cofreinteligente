@@ -10,7 +10,6 @@ public class Contratos {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "cnpj_processadora_filial")
     private ProcessadoraFilial processadoraFilial;
 
     @OneToMany(mappedBy = "num_contrato")

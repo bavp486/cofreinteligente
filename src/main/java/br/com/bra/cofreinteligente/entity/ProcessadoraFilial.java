@@ -11,10 +11,9 @@ public class ProcessadoraFilial {
     @Id
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "processadoraMatriz_id")
     private ProcessadoraMatriz processadoraMatriz;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Endereco endereco;
 
     @OneToMany(mappedBy = "id_processadora")
