@@ -6,8 +6,10 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Data
 public class ClienteFilial {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @OneToMany(mappedBy = "id_ClienteFilial")

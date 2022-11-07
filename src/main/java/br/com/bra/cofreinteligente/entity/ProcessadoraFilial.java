@@ -9,6 +9,7 @@ import java.util.Set;
 public class ProcessadoraFilial {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @ManyToOne
     private ProcessadoraMatriz processadoraMatriz;

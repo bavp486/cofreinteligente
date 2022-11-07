@@ -6,7 +6,9 @@ import java.util.Set;
 
 @Entity
 public class Contratos {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @ManyToOne

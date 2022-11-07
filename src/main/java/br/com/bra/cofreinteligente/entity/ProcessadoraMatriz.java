@@ -6,6 +6,7 @@ import java.util.Set;
 @Entity
 public class ProcessadoraMatriz {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @OneToMany(mappedBy = "id")
