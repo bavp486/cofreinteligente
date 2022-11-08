@@ -1,0 +1,21 @@
+_id: req_69aa8ac821044be5bb69589844685129
+type: Request
+parentId: fld_582847cd6a8643bc938e0fd41a446106
+modified: 1667877981430
+created: 1667877725160
+url: http://localhost:8080/ProcessadoraMatriz
+name: Busca Processadora Matriz (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597414
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

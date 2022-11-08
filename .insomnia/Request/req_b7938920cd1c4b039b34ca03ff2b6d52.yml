@@ -1,0 +1,21 @@
+_id: req_b7938920cd1c4b039b34ca03ff2b6d52
+type: Request
+parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
+modified: 1667939261811
+created: 1667939248812
+url: http://localhost:8080/Cofre
+name: Busca Cofre (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667932076360.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_93eface9ff264c4f8b139fa00a003e77
+type: Request
+parentId: fld_3af55dc76cc44bedb2b79c5c6329279b
+modified: 1667886174566
+created: 1667886159323
+url: http://localhost:8080/Conta
+name: Busca Conta (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1666792308731.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

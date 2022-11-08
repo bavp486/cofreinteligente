@@ -1,0 +1,38 @@
+_id: req_b4c92687f0694d5c83e14a957d36553e
+type: Request
+parentId: fld_761a8c68cf45433c9b333beaec2badf1
+modified: 1667939021622
+created: 1667878099990
+url: http://localhost:8080/ProcessadoraFilial
+name: Cadastra Processadora Filial
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"id_Matriz" : "1",
+    	"id_endereco" : "1",
+    	"cnpj" : "75000010000126",
+    	"nome" : "Processadora Filial 1",
+    	"endereco" : { 
+    		"rua" : "Rua 78",
+    		"numero" : "12488",
+    		"cidade" : "Sao Paulo",
+    		"uf" : "SP"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6ff09d6460e649159a90d4589cdd126a
+authentication: {}
+metaSortKey: -1665699597589
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

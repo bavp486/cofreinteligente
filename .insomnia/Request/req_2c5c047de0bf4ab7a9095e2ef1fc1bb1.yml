@@ -1,0 +1,21 @@
+_id: req_2c5c047de0bf4ab7a9095e2ef1fc1bb1
+type: Request
+parentId: fld_b4acf342c4b5445aaf7d0fa18d82b28d
+modified: 1667875319693
+created: 1667873829299
+url: http://localhost:8080/ClienteMatriz
+name: Busca Cliente Matriz (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597414
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

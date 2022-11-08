@@ -1,0 +1,21 @@
+_id: req_8a4b8afe41214b3e8004d12614017bfb
+type: Request
+parentId: fld_64d31e4101d64d0d98a2a161dfe22aed
+modified: 1667925829404
+created: 1667925072328
+url: http://localhost:8080/Contratos/1
+name: Busca Contratos por Id
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667925072328
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

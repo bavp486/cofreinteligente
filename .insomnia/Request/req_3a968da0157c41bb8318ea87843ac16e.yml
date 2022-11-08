@@ -1,0 +1,21 @@
+_id: req_3a968da0157c41bb8318ea87843ac16e
+type: Request
+parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
+modified: 1667875187808
+created: 1667866210955
+url: http://localhost:8080/ClienteFilial/1
+name: Deleta Cliente Filial por Id
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597339
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

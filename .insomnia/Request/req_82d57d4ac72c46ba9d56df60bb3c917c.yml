@@ -1,0 +1,21 @@
+_id: req_82d57d4ac72c46ba9d56df60bb3c917c
+type: Request
+parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
+modified: 1667939343341
+created: 1667939321939
+url: http://localhost:8080/Cofre/1/4X4
+name: Altera Tipo Cofre por Num Cofre
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667925947875.8125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

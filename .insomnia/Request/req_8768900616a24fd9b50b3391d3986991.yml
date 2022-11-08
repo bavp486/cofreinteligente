@@ -1,0 +1,21 @@
+_id: req_8768900616a24fd9b50b3391d3986991
+type: Request
+parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
+modified: 1667939277714
+created: 1667939272529
+url: http://localhost:8080/Cofre/1
+name: Busca Cofre por NumCofre
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667928574369.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

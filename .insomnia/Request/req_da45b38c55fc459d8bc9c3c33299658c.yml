@@ -1,0 +1,45 @@
+_id: req_da45b38c55fc459d8bc9c3c33299658c
+type: Request
+parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
+modified: 1667939157288
+created: 1667864389912
+url: http://localhost:8080/ClienteFilial
+name: Cadastra ClienteFilial
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"id_Matriz" : "1",
+    	"id_endereco" : "1",
+    	"id_cofre" : "1",
+    	"id_conta" : "1",
+    	"numcontrato" : "1",
+    	"cnpj" : "21.717.963/0001-80",
+    	"nome" : "Cliente Filial 1",
+    	"endereco" : { 
+    		"rua" : "Rua 87",
+    		"numero" : "1244",
+    		"cidade" : "Sao Paulo",
+    		"uf" : "SP"
+    	},
+    	"conta" : {
+    		"agencia" : "13",
+    		"conta" : "25878"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6ff09d6460e649159a90d4589cdd126a
+authentication: {}
+metaSortKey: -1665699597589
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

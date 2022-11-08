@@ -1,0 +1,37 @@
+_id: req_efaf8f891e864837a84930ad1b74840f
+type: Request
+parentId: fld_b4acf342c4b5445aaf7d0fa18d82b28d
+modified: 1667939005637
+created: 1667873829292
+url: http://localhost:8080/ClienteMatriz
+name: Cadastra ClienteMatriz
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"id_endereco" : "1",
+    	"cnpj" : "79.182.037/0001-38",
+    	"nome" : "Cliente Matriz 1",
+    	"endereco" : { 
+    		"rua" : "Rua 1",
+    		"numero" : "123",
+    		"cidade" : "Sao Paulo",
+    		"uf" : "SP"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6ff09d6460e649159a90d4589cdd126a
+authentication: {}
+metaSortKey: -1665699597589
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_9f0facc2ee0a4154bf074b09094b9333
+type: Request
+parentId: fld_761a8c68cf45433c9b333beaec2badf1
+modified: 1667881085317
+created: 1667878099992
+url: http://localhost:8080/ProcessadoraFilial/1
+name: Busca Processadora Filial por Id
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597489
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

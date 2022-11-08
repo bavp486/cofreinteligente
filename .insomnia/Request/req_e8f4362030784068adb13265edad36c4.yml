@@ -1,0 +1,30 @@
+_id: req_e8f4362030784068adb13265edad36c4
+type: Request
+parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
+modified: 1667945313577
+created: 1667939080443
+url: http://localhost:8080/Cofre
+name: Cadastra Cofre
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"numeroCofre" : "1",
+    	"idClienteFilial" : "3",
+    	"tipoCofre" : "3x4"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1667939080443
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

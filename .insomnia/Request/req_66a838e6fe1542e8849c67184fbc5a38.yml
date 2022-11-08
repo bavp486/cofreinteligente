@@ -1,0 +1,21 @@
+_id: req_66a838e6fe1542e8849c67184fbc5a38
+type: Request
+parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
+modified: 1667939293025
+created: 1667939287524
+url: http://localhost:8080/Cofre/Cliente/3
+name: Busca Cofre por Cliente
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667926823373.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
