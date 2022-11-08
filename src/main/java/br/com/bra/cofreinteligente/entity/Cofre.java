@@ -16,17 +16,17 @@ import java.util.Set;
 public class Cofre {
 
     @Id
-    private Long numero_cofre;
+    private Long numeroCofre;
 
-    @OneToMany(mappedBy = "numero_cofre")
+    @OneToMany(mappedBy = "numeroCofre")
     private Set<Movimentacoes> movimentacoes;
 
-    @OneToMany(mappedBy = "numero_cofre")
+    @OneToMany(mappedBy = "numeroCofre")
     private Set<SaldoCofre> saldoCofres;
 
     @ManyToOne
     private ClienteFilial clienteFilial;
 
-    private Long id_ClienteFilial;
-    private String tipo_cofre;
+    private Long idClienteFilial;
+    private String tipoCofre;
 }
