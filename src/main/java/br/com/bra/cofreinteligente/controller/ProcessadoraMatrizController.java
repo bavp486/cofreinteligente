@@ -16,7 +16,7 @@ public class ProcessadoraMatrizController {
     public ProcessadoraMatrizService processadoraMatrizService;
 
     @PostMapping
-    public ProcessadoraMatrizDto addClienteMatriz(@RequestBody ProcessadoraMatrizDto processadoraMatrizDto){
+    public ProcessadoraMatrizDto addProcessdoraMatriz(@RequestBody ProcessadoraMatrizDto processadoraMatrizDto){
         return processadoraMatrizService.addProcessadoraMatriz ( processadoraMatrizDto );
     }
 

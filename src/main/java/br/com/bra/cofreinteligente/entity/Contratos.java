@@ -17,14 +17,16 @@ import java.util.Set;
 public class Contratos {
 
     @Id
-    private Long numero_contrato;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
     @ManyToOne
     private ProcessadoraFilial processadoraFilial;
 
-    @OneToMany(mappedBy = "numcontrato")
+    @OneToMany(mappedBy = "num_contrato")
     private Set<ClienteFilial> clienteFilials;
 
     private Long id_processadora;
-
+    private Long numero_contrato;
     private BigDecimal valor;
 }
