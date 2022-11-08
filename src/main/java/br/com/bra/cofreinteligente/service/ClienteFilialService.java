@@ -14,14 +14,24 @@ public class ClienteFilialService {
     @Autowired
     private ClienteFilialRepository clienteFilialRepository;
 
-    public ClienteFilialDto addClienteFilial(ClienteFilialDto clienteFilialDto){
+    @Autowired
+    public EnderecoService enderecoService;
+
+    @Autowired
+    public ContaService contaService;
+
+
+
+    public ClienteFilialDto addClienteFilial(ClienteFilialDto dto){
         ClienteFilial cliente = ClienteFilial.builder()
-                .id_Matriz(clienteFilialDto.getId_Matriz())
-                .id_endereco(clienteFilialDto.getId_endereco())
-                .id_conta(clienteFilialDto.getId_conta())
-                .num_contrato(clienteFilialDto.getNum_contrato())
-                .cnpj(clienteFilialDto.getCnpj())
-                .nome(clienteFilialDto.getNome())
+                .id_Matriz(dto.getId_Matriz())
+                .id_endereco(
+                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .id_conta(
+                        contaService.addConta(dto.getConta().getAgencia(),dto.getConta().getConta()).getId())
+                .num_contrato(dto.getNum_contrato())
+                .cnpj(dto.getCnpj())
+                .nome(dto.getNome())
                 .build();
         clienteFilialRepository.save(cliente);
         return new ClienteFilialDto(cliente);

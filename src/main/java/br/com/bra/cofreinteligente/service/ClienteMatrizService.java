@@ -16,11 +16,16 @@ public class ClienteMatrizService {
     @Autowired
     public ClienteMatrizRepository clienteMatrizRepository;
 
-    public ClienteMatrizDto addClienteMatriz (ClienteMatrizDto clienteMatrizDto){
+    @Autowired
+    public EnderecoService enderecoService;
+
+    public ClienteMatrizDto addClienteMatriz (ClienteMatrizDto dto){
+
         var cliente = ClienteMatriz.builder()
-                .id_endereco(clienteMatrizDto.getId_endereco())
-                .cnpj(clienteMatrizDto.getCnpj())
-                .nome(clienteMatrizDto.getNome())
+                .id_endereco(
+                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .cnpj(dto.getCnpj())
+                .nome(dto.getNome())
                 .build();
         clienteMatrizRepository.save(cliente);
         return new ClienteMatrizDto(cliente);

@@ -14,11 +14,15 @@ public class ProcessadoraMatrizService {
     @Autowired
     public ProcessadoraMatrizRepository processadoraMatrizRepository;
 
-    public ProcessadoraMatrizDto addProcessadoraMatriz (ProcessadoraMatrizDto processadoraMatrizDto){
+    @Autowired
+    public EnderecoService enderecoService;
+
+    public ProcessadoraMatrizDto addProcessadoraMatriz (ProcessadoraMatrizDto dto){
         var cliente = ProcessadoraMatriz.builder()
-                .id_endereco(processadoraMatrizDto.getId_endereco())
-                .cnpj(processadoraMatrizDto.getCnpj())
-                .nome(processadoraMatrizDto.getNome())
+                .id_endereco(
+                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .cnpj(dto.getCnpj())
+                .nome(dto.getNome())
                 .build();
         processadoraMatrizRepository.save ( cliente );
         return new ProcessadoraMatrizDto (cliente);

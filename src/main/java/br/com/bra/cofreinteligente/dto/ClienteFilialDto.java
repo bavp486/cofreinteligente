@@ -1,6 +1,8 @@
 package br.com.bra.cofreinteligente.dto;
 
 import br.com.bra.cofreinteligente.entity.ClienteFilial;
+import br.com.bra.cofreinteligente.entity.Conta;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ClienteFilialDto implements Serializable {
     private Long id;
+
+    private EnderecoDto endereco;
+    private Conta conta;
     private Long id_Matriz;
     private  Long id_endereco;
     private Long id_conta;
@@ -26,5 +31,25 @@ public class ClienteFilialDto implements Serializable {
         this.num_contrato = clienteFilial.getNum_contrato();
         this.cnpj = clienteFilial.getCnpj();
         this.nome = clienteFilial.getNome();
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class EnderecoDto implements Serializable {
+        private Long id;
+        private String rua;
+        private String numero;
+        private String cidade;
+        private String uf;
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class ContaDto implements Serializable{
+        private Long id;
+        private int agencia;
+        private Long conta;
     }
 }

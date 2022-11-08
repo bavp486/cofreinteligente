@@ -14,12 +14,15 @@ public class ProcessadoraFilialService {
     @Autowired
     private ProcessadoraFilialRepository processadoraFilialRepository;
 
-    public ProcessadoraFilialDto addProcessadoraFilial (ProcessadoraFilialDto processadoraFilialDto){
+    @Autowired
+    public EnderecoService enderecoService;
+
+    public ProcessadoraFilialDto addProcessadoraFilial (ProcessadoraFilialDto dto){
         ProcessadoraFilial cliente = ProcessadoraFilial.builder()
-                .id_Matriz(processadoraFilialDto.getId_Matriz())
-                .id_endereco( processadoraFilialDto.getId_endereco ())
-                .cnpj ( processadoraFilialDto.getCnpj () )
-                .nome ( processadoraFilialDto.getNome () )
+                .id_Matriz(dto.getId_Matriz())
+                .id_endereco(
+                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .nome ( dto.getNome () )
                 .build();
         processadoraFilialRepository.save(cliente);
         return new ProcessadoraFilialDto (cliente);

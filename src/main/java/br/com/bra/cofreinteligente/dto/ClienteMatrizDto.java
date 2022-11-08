@@ -12,6 +12,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ClienteMatrizDto implements Serializable {
     private Long id;
+
+    private EnderecoDto endereco;
     private Long id_endereco;
     private String cnpj;
     private String nome;
@@ -21,5 +23,16 @@ public class ClienteMatrizDto implements Serializable {
         this.id_endereco = clienteMatriz.getId_endereco();
         this.cnpj = clienteMatriz.getCnpj();
         this.nome = clienteMatriz.getNome();
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class EnderecoDto implements Serializable {
+        private Long id;
+        private String rua;
+        private String numero;
+        private String cidade;
+        private String uf;
     }
 }
