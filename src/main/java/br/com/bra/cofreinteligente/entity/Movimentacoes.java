@@ -31,5 +31,5 @@ public class Movimentacoes {
     @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;
 
-    private BigDecimal valor_Recolhido;
+    private BigDecimal valorRecolhido;
 }
