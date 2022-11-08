@@ -36,9 +36,12 @@ public class ClienteFilialService {
       //  return clienteFilialRepository.findById(id).get();
     }
 
-    public List<ClienteFilial> getAllClienteFilial(){
+    public List<ClienteFilialDto> getAllClienteFilial(){
+        return clienteFilialRepository.findAll().stream()
+                .map(ClienteFilialDto::new)
+                .toList();
 
-        return clienteFilialRepository.findAll();
+       // return clienteFilialRepository.findAll();
     }
 
 
@@ -46,7 +49,7 @@ public class ClienteFilialService {
         clienteFilialRepository.deleteById(getClienteFilial(id).getId());
     }
 
-    public ClienteFilial alteraNomeClientePorId(Long id, ClienteFilialDto clienteFilialDto) throws Exception {
+    public ClienteFilialDto alteraNomeClientePorId(Long id, ClienteFilialDto clienteFilialDto) throws Exception {
         var dto = getClienteFilial(id);
         var cliente = ClienteFilial.builder()
                 .id(dto.getId())
@@ -58,7 +61,7 @@ public class ClienteFilialService {
                 .nome(clienteFilialDto.getNome())
                 .build();
         clienteFilialRepository.save(cliente);
-        return cliente;
+        return new ClienteFilialDto(cliente);
     }
 
 }

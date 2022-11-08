@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Cliente")
-public class ClienteController {
+@RequestMapping("/ClienteFilial")
+public class ClienteFilialController {
 
     @Autowired
     private ClienteFilialService clienteFilialService;
@@ -21,7 +21,7 @@ public class ClienteController {
     }
 
     @GetMapping
-    public List<ClienteFilial> getCliente(){
+    public List<ClienteFilialDto> getCliente(){
         return clienteFilialService.getAllClienteFilial();
     }
 
@@ -30,14 +30,14 @@ public class ClienteController {
         return clienteFilialService.getClienteFilial(id);
     }
 
-    @DeleteMapping("/Delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClienteById(@PathVariable(value = "id") Long id) throws Exception {
         clienteFilialService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @PatchMapping("/{id}")
-    public ClienteFilial alteraClienteNameById (@PathVariable(value = "id")Long id, @RequestBody ClienteFilialDto clienteFilialDto) throws Exception {
+    public ClienteFilialDto alteraClienteNameById (@PathVariable(value = "id")Long id, @RequestBody ClienteFilialDto clienteFilialDto) throws Exception {
         return clienteFilialService.alteraNomeClientePorId(id,clienteFilialDto);
     }
 
