@@ -1,12 +1,18 @@
 package br.com.bra.cofreinteligente.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
+@Builder
+@NoArgsConstructor
 public class ClienteFilial {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -30,7 +36,6 @@ public class ClienteFilial {
     private Contratos contratos;
 
     private Long id_endereco;
-    private Long id_cofre;
     private Long id_conta;
     private Long num_contrato;
     private String cnpj;
