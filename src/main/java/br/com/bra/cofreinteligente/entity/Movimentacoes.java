@@ -26,7 +26,7 @@ public class Movimentacoes {
     private Cofre cofre;
 
     @Column(nullable = false)
-    private Long numero_cofre;
+    private Long numeroCofre;
 
     @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;

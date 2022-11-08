@@ -18,7 +18,7 @@ public class ClienteFilial {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @OneToMany(mappedBy = "id_ClienteFilial")
+    @OneToMany(mappedBy = "idClienteFilial")
     private Set<Cofre> cofre;
 
     @ManyToOne
