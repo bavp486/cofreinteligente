@@ -25,6 +25,6 @@ public class ProcessadoraMatriz {
     private Endereco endereco;
 
     private Long id_endereco;
-    private String cnpj;
+    private Long cnpj;
     private String nome;
 }

@@ -29,7 +29,7 @@ public class ClienteFilialService {
                         enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
                 .id_conta(
                         contaService.addConta(dto.getConta().getAgencia(),dto.getConta().getConta()).getId())
-                .num_contrato(dto.getNum_contrato())
+                .numcontrato(dto.getNumcontrato())
                 .cnpj(dto.getCnpj())
                 .nome(dto.getNome())
                 .build();
@@ -66,7 +66,7 @@ public class ClienteFilialService {
                 .id_Matriz(dto.getId_Matriz())
                 .id_endereco(dto.getId_endereco())
                 .id_conta(dto.getId_conta())
-                .num_contrato(dto.getNum_contrato())
+                .numcontrato(dto.getNumcontrato())
                 .cnpj(clienteFilialDto.getCnpj())
                 .nome(clienteFilialDto.getNome())
                 .build();
@@ -74,4 +74,11 @@ public class ClienteFilialService {
         return new ClienteFilialDto(cliente);
     }
 
+    public Long getClienteFilialbyNum_Contrato (Long num_contrato) throws Exception {
+        var cliente = clienteFilialRepository.findAllByNumcontrato(num_contrato);
+        if (cliente.isEmpty()){
+            throw new Exception("Numero do contrato não existe no cliente");
+        }
+        return cliente.stream().findFirst().get().getNumcontrato() ;
+    }
 }

@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class ProcessadoraFilialDto implements Serializable {
     private Long id;
     private EnderecoDto endereco;
-    private String cnpj;
+    private Long cnpj;
     private Long id_Matriz;
     private Long id_endereco;
     private String nome;

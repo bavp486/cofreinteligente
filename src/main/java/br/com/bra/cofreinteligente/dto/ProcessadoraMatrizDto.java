@@ -13,7 +13,7 @@ public class ProcessadoraMatrizDto implements Serializable {
     private Long id;
     private EnderecoDto endereco;
     private Long id_endereco;
-    private String cnpj;
+    private Long cnpj;
     private String nome;
 
     public ProcessadoraMatrizDto(ProcessadoraMatriz processadoraMatriz) {

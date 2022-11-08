@@ -20,6 +20,7 @@ public class ProcessadoraFilialService {
     public ProcessadoraFilialDto addProcessadoraFilial (ProcessadoraFilialDto dto){
         ProcessadoraFilial cliente = ProcessadoraFilial.builder()
                 .id_Matriz(dto.getId_Matriz())
+                .cnpj(dto.getCnpj())
                 .id_endereco(
                         enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
                 .nome ( dto.getNome () )
@@ -59,6 +60,14 @@ public class ProcessadoraFilialService {
                 .build();
         processadoraFilialRepository.save(cliente);
         return new ProcessadoraFilialDto (cliente);
+    }
+
+    public Long getProcessadoraFilialbyCNPJ(Long id) throws Exception {
+        var processadora = processadoraFilialRepository.findByCnpj(id);
+        if (processadora.isEmpty()){
+            throw new Exception("CNPJ não localizado nas Processadoras");
+        }
+        return processadora.stream().findFirst().get().getCnpj();
     }
 
 }

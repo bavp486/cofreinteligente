@@ -37,7 +37,7 @@ public class ClienteFilial {
 
     private Long id_endereco;
     private Long id_conta;
-    private Long num_contrato;
+    private Long numcontrato;
     private String cnpj;
     private String nome;
 

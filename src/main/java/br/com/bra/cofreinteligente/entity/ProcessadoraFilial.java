@@ -27,7 +27,7 @@ public class ProcessadoraFilial {
     @OneToMany(mappedBy = "id_processadora")
     private Set<Contratos> contratos;
 
-    private String cnpj;
+    private Long cnpj;
     private Long id_Matriz;
     private Long id_endereco;
     private String nome;
