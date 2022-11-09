@@ -1,0 +1,21 @@
+_id: req_f9e35c8c3dce41c0ba043be3e1c503cc
+type: Request
+parentId: fld_d54e34931f3443b8a9c2896f98c254de
+modified: 1668033147947
+created: 1668033130365
+url: http://localhost:8080/SaldoConta
+name: BuscaSaldoConta (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1668033130365
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
