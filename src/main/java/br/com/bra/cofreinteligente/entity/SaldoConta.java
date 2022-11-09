@@ -23,7 +23,7 @@ public class SaldoConta {
     @ManyToOne
     private Conta conta;
 
-    private Long id_conta;
+    private Long idConta;
     @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;
     private BigDecimal saldo;

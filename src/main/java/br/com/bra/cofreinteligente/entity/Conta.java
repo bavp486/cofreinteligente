@@ -22,10 +22,8 @@ public class Conta {
     @JoinColumn(referencedColumnName = "id_conta")
     private ClienteFilial clienteFilial;
 
-    @OneToMany(mappedBy = "id_conta")
+    @OneToMany(mappedBy = "idConta")
     private Set<SaldoConta> saldoContas;
-
-
 
     private int agencia;
     private Long conta;
