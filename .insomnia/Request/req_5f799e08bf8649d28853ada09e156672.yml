@@ -1,0 +1,21 @@
+_id: req_5f799e08bf8649d28853ada09e156672
+type: Request
+parentId: fld_2a872e5341844a6cb6a8ef735821a88a
+modified: 1667885804219
+created: 1667885019874
+url: http://localhost:8080/Endereco
+name: Busca Endereco (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667885019874
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_690fd063d5b34ae4a012ea92d56cf139
+type: Request
+parentId: fld_b4acf342c4b5445aaf7d0fa18d82b28d
+modified: 1667881441982
+created: 1667873829293
+url: http://localhost:8080/ClienteMatriz/3
+name: Busca Cliente Matriz por Id
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597489
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

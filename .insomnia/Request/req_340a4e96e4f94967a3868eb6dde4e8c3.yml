@@ -1,0 +1,37 @@
+_id: req_340a4e96e4f94967a3868eb6dde4e8c3
+type: Request
+parentId: fld_582847cd6a8643bc938e0fd41a446106
+modified: 1668032840055
+created: 1667877725150
+url: http://localhost:8080/ProcessadoraMatriz
+name: Cadastra Processadora Matriz
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"id_endereco" : "1",
+    	"cnpj" : "18386602000194",
+    	"nome" : "Processadora Matriz 1",
+    	"endereco" : { 
+    		"rua" : "Rua 848",
+    		"numero" : "12448",
+    		"cidade" : "Sao Paulo",
+    		"uf" : "SP"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6ff09d6460e649159a90d4589cdd126a
+authentication: {}
+metaSortKey: -1665699597589
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

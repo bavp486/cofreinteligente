@@ -1,0 +1,21 @@
+_id: req_132ba12c1348409f8a8b90182d8c4943
+type: Request
+parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
+modified: 1667875214227
+created: 1667873811033
+url: http://localhost:8080/ClienteFilial
+name: Busca Cliente Filial (Todos)
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597414
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

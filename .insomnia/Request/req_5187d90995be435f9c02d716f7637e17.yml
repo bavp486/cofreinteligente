@@ -1,0 +1,29 @@
+_id: req_5187d90995be435f9c02d716f7637e17
+type: Request
+parentId: fld_761a8c68cf45433c9b333beaec2badf1
+modified: 1667923529861
+created: 1667878099998
+url: http://localhost:8080/ProcessadoraFilial/8
+name: Altera nome Processadora Filial por id
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-2
+     {
+    	"cnpj" : "1235459781",
+    	"nome" : "Processadora Filial 1 - Renomeada"
+     }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1665699597389
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

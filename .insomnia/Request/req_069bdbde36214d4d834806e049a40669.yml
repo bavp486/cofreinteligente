@@ -1,0 +1,21 @@
+_id: req_069bdbde36214d4d834806e049a40669
+type: Request
+parentId: fld_64d31e4101d64d0d98a2a161dfe22aed
+modified: 1667925835700
+created: 1667925610510
+url: http://localhost:8080/Contratos/1/500
+name: Altera Valor dos Contratos por Id
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1667924825137.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

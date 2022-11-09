@@ -1,0 +1,23 @@
+_id: req_6f0140c7f1544d198b099c5787d10b4f
+type: Request
+parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
+modified: 1667875304733
+created: 1667864733458
+url: http://localhost:8080/ClienteFilial/1
+name: Busca Cliente Filial por Id
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1665699597489
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

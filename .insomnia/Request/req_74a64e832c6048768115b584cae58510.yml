@@ -1,0 +1,29 @@
+_id: req_74a64e832c6048768115b584cae58510
+type: Request
+parentId: fld_582847cd6a8643bc938e0fd41a446106
+modified: 1667881834309
+created: 1667877725159
+url: http://localhost:8080/ProcessadoraMatriz/1
+name: Altera nome Processadora Matriz por id
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-2
+     {
+    	"cnpj" : "18.386.602/0001-94",
+    	"nome" : "Processadora Matriz 1 - Renomeada"
+     }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1665699597389
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
