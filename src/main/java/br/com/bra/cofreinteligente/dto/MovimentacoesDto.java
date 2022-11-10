@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -16,18 +17,15 @@ import java.util.Optional;
 @NoArgsConstructor
 public class MovimentacoesDto {
     private Long id;
-    private Cofre cofre;
     private Long numeroCofre;
 
-    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
-    private LocalDateTime data;
+    private LocalDate data;
     private BigDecimal valorRecolhido;
 
 
     public MovimentacoesDto(Movimentacoes movimentacoes) {
         this.id = movimentacoes.getId();
-        this.cofre = movimentacoes.getCofre();
-        this.numeroCofre = movimentacoes.getNumeroCofre();
+        this.numeroCofre = movimentacoes.getCofre().getNumeroCofre();
         this.data = movimentacoes.getData();
         this.valorRecolhido = movimentacoes.getValorRecolhido();
 

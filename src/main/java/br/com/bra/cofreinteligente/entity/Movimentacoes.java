@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -23,13 +24,11 @@ public class Movimentacoes {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "numeroCofre")
     private Cofre cofre;
 
-    @Column(nullable = false)
-    private Long numeroCofre;
-
     @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
-    private LocalDateTime data;
+    private LocalDate data;
 
     private BigDecimal valorRecolhido;
 }

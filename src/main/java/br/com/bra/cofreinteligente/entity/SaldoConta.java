@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -24,7 +25,7 @@ public class SaldoConta {
     private Conta conta;
 
     private Long idConta;
-    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
-    private LocalDateTime data;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate data;
     private BigDecimal saldo;
 }

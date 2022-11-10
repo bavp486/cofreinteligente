@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -17,12 +18,12 @@ import java.time.LocalDateTime;
 public class SaldoCofreDto implements Serializable {
     private Long id;
     private Long numeroCofre;
-    private LocalDateTime data;
+    private LocalDate data;
     private BigDecimal saldo;
 
     public SaldoCofreDto(SaldoCofre saldoCofre) {
         this.id = saldoCofre.getId();
-        this.numeroCofre = saldoCofre.getNumeroCofre();
+        this.numeroCofre = saldoCofre.getCofre().getNumeroCofre();
         this.data = saldoCofre.getData();
         this.saldo = saldoCofre.getSaldo();
     }

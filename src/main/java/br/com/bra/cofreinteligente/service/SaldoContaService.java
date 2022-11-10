@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class SaldoContaService {
         var conta = SaldoConta.builder()
                 .idConta(id)
                 .saldo(BigDecimal.ZERO)
-                .data(LocalDateTime.now())
+                .data(LocalDate.now())
                 .build();
         saldoContaRepository.save(conta);
     }

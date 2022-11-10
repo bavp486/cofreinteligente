@@ -24,7 +24,7 @@ public class SaldoCofreController {
     }
 
     @GetMapping("/{numCofre}")
-    private List<SaldoCofreDto> getAllSaldoCofreByNumCofre(@PathVariable(value = "numCofre") Long numCofre){
+    private List<SaldoCofreDto> getAllSaldoCofreByNumCofre(@PathVariable(value = "numCofre") Long numCofre) throws Exception {
         return saldoCofreService.getAllSaldoCofreByNumCofre(numCofre);
     }
 }

@@ -18,10 +18,10 @@ public class Cofre {
     @Id
     private Long numeroCofre;
 
-    @OneToMany(mappedBy = "numeroCofre")
+    @OneToMany(mappedBy = "cofre")
     private Set<Movimentacoes> movimentacoes;
 
-    @OneToMany(mappedBy = "numeroCofre")
+    @OneToMany(mappedBy = "cofre")
     private Set<SaldoCofre> saldoCofres;
 
     @ManyToOne
