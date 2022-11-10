@@ -1,6 +1,7 @@
 package br.com.bra.cofreinteligente.service;
 
 import br.com.bra.cofreinteligente.dto.ProcessadoraFilialDto;
+import br.com.bra.cofreinteligente.entity.Endereco;
 import br.com.bra.cofreinteligente.entity.ProcessadoraFilial;
 import br.com.bra.cofreinteligente.repository.ProcessadoraFilialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,16 @@ public class ProcessadoraFilialService {
     public EnderecoService enderecoService;
 
     public ProcessadoraFilialDto addProcessadoraFilial (ProcessadoraFilialDto dto){
+        var endereco = Endereco.builder()
+                .rua(dto.getEndereco().getRua())
+                .numero(dto.getEndereco().getNumero())
+                .cidade(dto.getEndereco().getCidade())
+                .uf(dto.getEndereco().getUf())
+                .build();
         ProcessadoraFilial cliente = ProcessadoraFilial.builder()
                 .id_Matriz(dto.getId_Matriz())
                 .cnpj(dto.getCnpj())
-                .id_endereco(
-                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .endereco(endereco)
                 .nome ( dto.getNome () )
                 .build();
         processadoraFilialRepository.save(cliente);
@@ -50,11 +56,17 @@ public class ProcessadoraFilialService {
     }
 
     public ProcessadoraFilialDto alteraNomeProcessadoraFilialPorId(Long id, ProcessadoraFilialDto processadoraFilialDto) throws Exception {
+        var endereco = Endereco.builder()
+                .rua(processadoraFilialDto.getEndereco().getRua())
+                .numero(processadoraFilialDto.getEndereco().getNumero())
+                .cidade(processadoraFilialDto.getEndereco().getCidade())
+                .uf(processadoraFilialDto.getEndereco().getUf())
+                .build();
         var dto = getProcessadoraFilial (id);
         var cliente = ProcessadoraFilial.builder()
                 .id(dto.getId())
                 .id_Matriz(dto.getId_Matriz())
-                .id_endereco(dto.getId_endereco())
+                .endereco(endereco)
                 .cnpj(processadoraFilialDto.getCnpj())
                 .nome(processadoraFilialDto.getNome())
                 .build();

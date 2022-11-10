@@ -18,7 +18,7 @@ public class ProcessadoraMatrizDto implements Serializable {
 
     public ProcessadoraMatrizDto(ProcessadoraMatriz processadoraMatriz) {
         this.id = processadoraMatriz.getId ();
-        this.id_endereco = processadoraMatriz.getId_endereco ();
+        this.id_endereco = processadoraMatriz.getEndereco().getId();
         this.cnpj = processadoraMatriz.getCnpj ();
         this.nome = processadoraMatriz.getNome ();
     }

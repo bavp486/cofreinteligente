@@ -21,6 +21,7 @@ public class SaldoContaService {
         var conta = SaldoConta.builder()
                 .idConta(id)
                 .saldo(BigDecimal.ZERO)
+                .data(LocalDateTime.now())
                 .build();
         saldoContaRepository.save(conta);
     }

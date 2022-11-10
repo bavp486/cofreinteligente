@@ -16,7 +16,7 @@ public class ClienteFilialDto implements Serializable {
 
     private EnderecoDto endereco;
     private Conta conta;
-    private Long id_Matriz;
+    private Long idMatriz;
     private  Long id_endereco;
     private Long id_conta;
     private Long numcontrato;
@@ -25,8 +25,8 @@ public class ClienteFilialDto implements Serializable {
 
     public ClienteFilialDto(ClienteFilial clienteFilial) {
         this.id = clienteFilial.getId();
-        this.id_Matriz = clienteFilial.getId_Matriz();
-        this.id_endereco = clienteFilial.getId_endereco();
+        this.idMatriz = clienteFilial.getClienteMatriz().getId();
+        this.id_endereco = clienteFilial.getEndereco().getId();
         this.id_conta = clienteFilial.getId_conta();
         this.numcontrato = clienteFilial.getNumcontrato();
         this.cnpj = clienteFilial.getCnpj();

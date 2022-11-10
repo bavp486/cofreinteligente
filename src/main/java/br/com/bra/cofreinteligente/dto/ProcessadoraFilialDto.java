@@ -21,7 +21,7 @@ public class ProcessadoraFilialDto implements Serializable {
         this.id = processadoraFilial.getId ();
         this.cnpj = processadoraFilial.getCnpj ();
         this.id_Matriz = processadoraFilial.getId_Matriz ();
-        this.id_endereco = processadoraFilial.getId_endereco ();
+        this.id_endereco = processadoraFilial.getEndereco().getId();
         this.nome = processadoraFilial.getNome ();
     }
     @Data

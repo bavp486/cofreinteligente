@@ -21,7 +21,7 @@ public class ProcessadoraFilial {
     @ManyToOne
     private ProcessadoraMatriz processadoraMatriz;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
     @OneToMany(mappedBy = "id_processadora")
@@ -29,6 +29,6 @@ public class ProcessadoraFilial {
 
     private Long cnpj;
     private Long id_Matriz;
-    private Long id_endereco;
+
     private String nome;
 }

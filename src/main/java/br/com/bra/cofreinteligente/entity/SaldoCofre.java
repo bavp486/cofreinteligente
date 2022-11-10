@@ -24,7 +24,7 @@ public class SaldoCofre {
     @ManyToOne
     private Cofre cofre;
     private Long numeroCofre;
-    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
+//    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;
     private BigDecimal saldo;
 }

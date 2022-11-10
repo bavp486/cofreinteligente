@@ -17,6 +17,9 @@ public class CofreService {
     @Autowired
     public ClienteFilialService clienteFilialService;
 
+    @Autowired
+    public SaldoCofreService saldoCofreService;
+
     public CofreDto addCofre (CofreDto dto) throws Exception {
         var cofre = Cofre.builder()
                 .numeroCofre(dto.getNumeroCofre())
@@ -24,6 +27,7 @@ public class CofreService {
                 .idClienteFilial(clienteFilialService.getClienteFilial(dto.getIdClienteFilial()).getId())
                 .build();
         cofreRepository.save(cofre);
+        saldoCofreService.addAbreSaldoCofre(cofre.getNumeroCofre());
         return new CofreDto(cofre);
     }
 

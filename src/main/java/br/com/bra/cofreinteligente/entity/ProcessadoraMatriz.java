@@ -21,10 +21,10 @@ public class ProcessadoraMatriz {
     @OneToMany(mappedBy = "id")
     private Set<ProcessadoraFilial> processadoraFiliais;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
-    private Long id_endereco;
+
     private Long cnpj;
     private String nome;
 }

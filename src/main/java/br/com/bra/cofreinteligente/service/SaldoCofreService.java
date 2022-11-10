@@ -20,6 +20,7 @@ public class SaldoCofreService {
         var cofre = SaldoCofre.builder()
                 .numeroCofre(numCofre)
                 .saldo(BigDecimal.ZERO)
+                .data(LocalDateTime.now())
                 .build();
         saldoCofreRepository.save(cofre);
     }

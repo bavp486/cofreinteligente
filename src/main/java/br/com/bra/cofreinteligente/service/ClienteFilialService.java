@@ -2,6 +2,8 @@ package br.com.bra.cofreinteligente.service;
 
 import br.com.bra.cofreinteligente.dto.ClienteFilialDto;
 import br.com.bra.cofreinteligente.entity.ClienteFilial;
+import br.com.bra.cofreinteligente.entity.ClienteMatriz;
+import br.com.bra.cofreinteligente.entity.Endereco;
 import br.com.bra.cofreinteligente.repository.ClienteFilialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,10 +25,18 @@ public class ClienteFilialService {
 
 
     public ClienteFilialDto addClienteFilial(ClienteFilialDto dto){
+        var endereco = Endereco.builder()
+                .rua(dto.getEndereco().getRua())
+                .numero(dto.getEndereco().getNumero())
+                .cidade(dto.getEndereco().getCidade())
+                .uf(dto.getEndereco().getUf())
+                .build();
+
+        var clienteMatriz = new ClienteMatriz();
+        clienteMatriz.setId(dto.getIdMatriz());
         ClienteFilial cliente = ClienteFilial.builder()
-                .id_Matriz(dto.getId_Matriz())
-                .id_endereco(
-                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .clienteMatriz(clienteMatriz)
+                .endereco(endereco)
                 .id_conta(
                         contaService.addConta(dto.getConta().getAgencia(),dto.getConta().getConta()).getId())
                 .numcontrato(dto.getNumcontrato())
@@ -60,11 +70,19 @@ public class ClienteFilialService {
     }
 
     public ClienteFilialDto alteraNomeClientePorId(Long id, ClienteFilialDto clienteFilialDto) throws Exception {
+        var endereco = Endereco.builder()
+                .rua(clienteFilialDto.getEndereco().getRua())
+                .numero(clienteFilialDto.getEndereco().getNumero())
+                .cidade(clienteFilialDto.getEndereco().getCidade())
+                .uf(clienteFilialDto.getEndereco().getUf())
+                .build();
+        var clienteMatriz = new ClienteMatriz();
+        clienteMatriz.setId(clienteFilialDto.getIdMatriz());
         var dto = getClienteFilial(id);
         var cliente = ClienteFilial.builder()
                 .id(dto.getId())
-                .id_Matriz(dto.getId_Matriz())
-                .id_endereco(dto.getId_endereco())
+                .clienteMatriz(clienteMatriz)
+                .endereco(endereco)
                 .id_conta(dto.getId_conta())
                 .numcontrato(dto.getNumcontrato())
                 .cnpj(clienteFilialDto.getCnpj())

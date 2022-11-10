@@ -22,11 +22,10 @@ public class ClienteFilial {
     private Set<Cofre> cofre;
 
     @ManyToOne
+    @JoinColumn(name = "idMatriz")
     private ClienteMatriz clienteMatriz;
 
-    private Long id_Matriz;
-
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
   @OneToOne
@@ -35,7 +34,6 @@ public class ClienteFilial {
     @ManyToOne
     private Contratos contratos;
 
-    private Long id_endereco;
     private Long id_conta;
     private Long numcontrato;
     private String cnpj;

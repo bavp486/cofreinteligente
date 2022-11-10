@@ -20,7 +20,7 @@ public class ClienteMatrizDto implements Serializable {
 
     public ClienteMatrizDto(ClienteMatriz clienteMatriz) {
         this.id = clienteMatriz.getId();
-        this.id_endereco = clienteMatriz.getId_endereco();
+        this.id_endereco = clienteMatriz.getEndereco().getId();
         this.cnpj = clienteMatriz.getCnpj();
         this.nome = clienteMatriz.getNome();
     }

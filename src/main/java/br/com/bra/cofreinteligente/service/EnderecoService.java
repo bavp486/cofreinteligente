@@ -17,7 +17,6 @@ public class EnderecoService {
 
 
     public Endereco addEndereco(String rua, String numero, String cidade, String uf){
-
         var endereco = Endereco.builder()
                 .rua(rua)
                 .numero(numero)

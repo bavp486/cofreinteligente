@@ -1,6 +1,7 @@
 package br.com.bra.cofreinteligente.service;
 
 import br.com.bra.cofreinteligente.dto.ProcessadoraMatrizDto;
+import br.com.bra.cofreinteligente.entity.Endereco;
 import br.com.bra.cofreinteligente.entity.ProcessadoraMatriz;
 import br.com.bra.cofreinteligente.repository.ProcessadoraMatrizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,14 @@ public class ProcessadoraMatrizService {
     public EnderecoService enderecoService;
 
     public ProcessadoraMatrizDto addProcessadoraMatriz (ProcessadoraMatrizDto dto){
+        var endereco = Endereco.builder()
+                .rua(dto.getEndereco().getRua())
+                .numero(dto.getEndereco().getNumero())
+                .cidade(dto.getEndereco().getCidade())
+                .uf(dto.getEndereco().getUf())
+                .build();
         var cliente = ProcessadoraMatriz.builder()
-                .id_endereco(
-                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .endereco(endereco)
                 .cnpj(dto.getCnpj())
                 .nome(dto.getNome())
                 .build();
@@ -48,10 +54,16 @@ public class ProcessadoraMatrizService {
     }
 
     public ProcessadoraMatrizDto alteraNomeClientePorId(Long id, ProcessadoraMatrizDto processadoraMatrizDto) throws Exception {
+        var endereco = Endereco.builder()
+                .rua(processadoraMatrizDto.getEndereco().getRua())
+                .numero(processadoraMatrizDto.getEndereco().getNumero())
+                .cidade(processadoraMatrizDto.getEndereco().getCidade())
+                .uf(processadoraMatrizDto.getEndereco().getUf())
+                .build();
         var dto = getProcessadoraMatriz ( id );
         var cliente = ProcessadoraMatriz.builder ()
                 .id(dto.getId())
-                .id_endereco(dto.getId_endereco())
+                .endereco(endereco)
                 .cnpj(processadoraMatrizDto.getCnpj())
                 .nome(processadoraMatrizDto.getNome())
                 .build();

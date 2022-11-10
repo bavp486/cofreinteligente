@@ -4,6 +4,7 @@ import br.com.bra.cofreinteligente.dto.ClienteFilialDto;
 import br.com.bra.cofreinteligente.dto.ClienteMatrizDto;
 import br.com.bra.cofreinteligente.entity.ClienteFilial;
 import br.com.bra.cofreinteligente.entity.ClienteMatriz;
+import br.com.bra.cofreinteligente.entity.Endereco;
 import br.com.bra.cofreinteligente.repository.ClienteMatrizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,15 @@ public class ClienteMatrizService {
     public EnderecoService enderecoService;
 
     public ClienteMatrizDto addClienteMatriz (ClienteMatrizDto dto){
+        var endereco = Endereco.builder()
+                .rua(dto.getEndereco().getRua())
+                .numero(dto.getEndereco().getNumero())
+                .cidade(dto.getEndereco().getCidade())
+                .uf(dto.getEndereco().getUf())
+                .build();
 
         var cliente = ClienteMatriz.builder()
-                .id_endereco(
-                        enderecoService.addEndereco(dto.getEndereco().getRua(),dto.getEndereco().getNumero(),dto.getEndereco().getCidade(),dto.getEndereco().getUf()).getId())
+                .endereco(endereco)
                 .cnpj(dto.getCnpj())
                 .nome(dto.getNome())
                 .build();
@@ -51,10 +57,16 @@ public class ClienteMatrizService {
     }
 
     public ClienteMatrizDto alteraNomeClientePorId(Long id, ClienteMatrizDto clienteMatrizDto) throws Exception {
+        var endereco = Endereco.builder()
+                .rua(clienteMatrizDto.getEndereco().getRua())
+                .numero(clienteMatrizDto.getEndereco().getNumero())
+                .cidade(clienteMatrizDto.getEndereco().getCidade())
+                .uf(clienteMatrizDto.getEndereco().getUf())
+                .build();
         var dto = getClienteMatriz(id);
         var cliente = ClienteMatriz.builder()
                 .id(dto.getId())
-                .id_endereco(dto.getId_endereco())
+                .endereco(endereco)
                 .cnpj(clienteMatrizDto.getCnpj())
                 .nome(clienteMatrizDto.getNome())
                 .build();

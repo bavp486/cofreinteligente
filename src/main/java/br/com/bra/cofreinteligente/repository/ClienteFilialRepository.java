@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface ClienteFilialRepository extends JpaRepository<ClienteFilial, Long> {
 
 
-//    @Query(value = "select * from ClienteFilial as a where a.numContrato = :num",
-//            nativeQuery = true)
+    @Query(value = "select * from CLIENTE_FILIAL as a where a.NUMCONTRATO = :num",
+            nativeQuery = true)
     List<ClienteFilial> findAllByNumcontrato(@Param("num")Long num_contrato);
 }
