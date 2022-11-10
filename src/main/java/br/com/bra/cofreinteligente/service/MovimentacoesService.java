@@ -6,6 +6,7 @@ import br.com.bra.cofreinteligente.repository.MovimentacoesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -21,7 +22,7 @@ public class MovimentacoesService {
     public MovimentacoesDto addMovimentacoes(MovimentacoesDto movimentacoesDto){
         Movimentacoes movimentacao = Movimentacoes.builder()
                 .numeroCofre(movimentacoesDto.getNumeroCofre())
-                .data(movimentacoesDto.getData())
+                .data(LocalDateTime.now())
                 .valorRecolhido(movimentacoesDto.getValorRecolhido())
                 .build();
         movimentacoesRepository.save(movimentacao);
@@ -42,5 +43,18 @@ public class MovimentacoesService {
         return new MovimentacoesDto(movimentacao.get());
     }
 
+    public List<MovimentacoesDto> getAllByPeriod(LocalDateTime inicio, LocalDateTime fim){
+        return movimentacoesRepository.findByDataBetween(inicio, fim)
+                .stream()
+                .map(MovimentacoesDto::new)
+                .toList();
+    }
+
+    public List<MovimentacoesDto> getByPeriodAndCofre(LocalDateTime inicio, LocalDateTime fim, Long numeroCofre){
+        return movimentacoesRepository.findByDataBetweenAndNumeroCofre(inicio, fim, numeroCofre)
+                .stream()
+                .map(MovimentacoesDto::new)
+                .toList();
+    }
 
 }
