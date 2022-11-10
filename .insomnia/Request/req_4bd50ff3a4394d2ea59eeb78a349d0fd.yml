@@ -1,7 +1,7 @@
 _id: req_4bd50ff3a4394d2ea59eeb78a349d0fd
 type: Request
 parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
-modified: 1668032787482
+modified: 1668040169439
 created: 1667865703750
 url: http://localhost:8080/ClienteFilial
 name: Cadastra ClienteFilial2
@@ -12,8 +12,7 @@ body:
   text: |-2
     
      {
-    	 	"id_Matriz" : "1",
-    	"id_endereco" : "2",
+    	"idMatriz" : "1",
     	"id_cofre" : "2",
     	"id_conta" : "3",
     	"numcontrato" : "1",
