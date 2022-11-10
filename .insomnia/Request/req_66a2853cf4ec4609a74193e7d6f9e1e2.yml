@@ -1,25 +1,25 @@
-_id: req_c7658acea30442f3aa508881b616c7d9
+_id: req_66a2853cf4ec4609a74193e7d6f9e1e2
 type: Request
 parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668118633675
-created: 1668044293626
-url: http://localhost:8080/Movimentacoes
-name: Cadastra Movimentacoes
+modified: 1668118635881
+created: 1668115684878
+url: http://localhost:8080/Movimentacoes/periodo
+name: Busca Movimentacoes por periodo
 description: ""
-method: POST
+method: GET
 body:
   mimeType: application/json
   text: |-
     {
-    	"numeroCofre" : 1,
-    	"valorRecolhido" : 100000
+    	"inicio" : "2022-10-10",
+    	"fim" : "2022-10-12"
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1668044293626
+metaSortKey: -1668034525772.625
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

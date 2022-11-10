@@ -1,25 +1,17 @@
-_id: req_c7658acea30442f3aa508881b616c7d9
+_id: req_2c90b43bf23a48da9c31e9ec2c5914b1
 type: Request
 parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668118633675
-created: 1668044293626
+modified: 1668115369600
+created: 1668115369600
 url: http://localhost:8080/Movimentacoes
-name: Cadastra Movimentacoes
+name: Busca Movimentacoes (todos)
 description: ""
-method: POST
-body:
-  mimeType: application/json
-  text: |-
-    {
-    	"numeroCofre" : 1,
-    	"valorRecolhido" : 100000
-    }
+method: GET
+body: {}
 parameters: []
-headers:
-  - name: Content-Type
-    value: application/json
+headers: []
 authentication: {}
-metaSortKey: -1668044293626
+metaSortKey: -1668038711995.5
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
