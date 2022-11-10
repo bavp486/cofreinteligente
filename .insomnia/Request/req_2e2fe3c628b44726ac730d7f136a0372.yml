@@ -1,7 +1,7 @@
 _id: req_2e2fe3c628b44726ac730d7f136a0372
 type: Request
 parentId: fld_b4acf342c4b5445aaf7d0fa18d82b28d
-modified: 1668032782395
+modified: 1668040154998
 created: 1667873829295
 url: http://localhost:8080/ClienteMatriz
 name: Cadastra ClienteMatriz2
@@ -12,7 +12,6 @@ body:
   text: |-2
     
      {
-    	"id_endereco" : "2",
     	"cnpj" : "62.856.664/0001-04",
     	"nome" : "Cliente Matriz 2",
     	"endereco" : { 
