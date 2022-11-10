@@ -1,8 +1,10 @@
 package br.com.bra.cofreinteligente.service;
 
 import br.com.bra.cofreinteligente.dto.ProcessadoraFilialDto;
+import br.com.bra.cofreinteligente.entity.ClienteMatriz;
 import br.com.bra.cofreinteligente.entity.Endereco;
 import br.com.bra.cofreinteligente.entity.ProcessadoraFilial;
+import br.com.bra.cofreinteligente.entity.ProcessadoraMatriz;
 import br.com.bra.cofreinteligente.repository.ProcessadoraFilialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,32 +20,35 @@ public class ProcessadoraFilialService {
     @Autowired
     public EnderecoService enderecoService;
 
-    public ProcessadoraFilialDto addProcessadoraFilial (ProcessadoraFilialDto dto){
+    public ProcessadoraFilialDto addProcessadoraFilial(ProcessadoraFilialDto dto) {
+
         var endereco = Endereco.builder()
                 .rua(dto.getEndereco().getRua())
                 .numero(dto.getEndereco().getNumero())
                 .cidade(dto.getEndereco().getCidade())
                 .uf(dto.getEndereco().getUf())
                 .build();
+        var processadoraMatriz = new ProcessadoraMatriz();
+        processadoraMatriz.setId(dto.getId_Matriz());
         ProcessadoraFilial cliente = ProcessadoraFilial.builder()
-                .id_Matriz(dto.getId_Matriz())
+                .processadoraMatriz(processadoraMatriz)
                 .cnpj(dto.getCnpj())
                 .endereco(endereco)
-                .nome ( dto.getNome () )
+                .nome(dto.getNome())
                 .build();
         processadoraFilialRepository.save(cliente);
-        return new ProcessadoraFilialDto (cliente);
+        return new ProcessadoraFilialDto(cliente);
     }
 
     public ProcessadoraFilialDto getProcessadoraFilial(Long id) throws Exception {
         var cliente = processadoraFilialRepository.findById(id);
-        if (cliente.isEmpty()){
-            throw new Exception("Cliente não localizado");
+        if (cliente.isEmpty()) {
+            throw new Exception("Processadora não localizada");
         }
-        return new ProcessadoraFilialDto (cliente.get());
+        return new ProcessadoraFilialDto(cliente.get());
     }
 
-    public List<ProcessadoraFilialDto> getAllProcessadoraFilial(){
+    public List<ProcessadoraFilialDto> getAllProcessadoraFilial() {
         return processadoraFilialRepository.findAll().stream()
                 .map(ProcessadoraFilialDto::new)
                 .toList();
@@ -52,34 +57,37 @@ public class ProcessadoraFilialService {
 
 
     public void delete(Long id) throws Exception {
-        processadoraFilialRepository.deleteById(getProcessadoraFilial ( id ).getId());
+        processadoraFilialRepository.deleteById(getProcessadoraFilial(id).getId());
     }
 
     public ProcessadoraFilialDto alteraNomeProcessadoraFilialPorId(Long id, ProcessadoraFilialDto processadoraFilialDto) throws Exception {
-        var endereco = Endereco.builder()
-                .rua(processadoraFilialDto.getEndereco().getRua())
-                .numero(processadoraFilialDto.getEndereco().getNumero())
-                .cidade(processadoraFilialDto.getEndereco().getCidade())
-                .uf(processadoraFilialDto.getEndereco().getUf())
-                .build();
-        var dto = getProcessadoraFilial (id);
+        var dto = processadoraFilialRepository.findById(id);
+        if(dto.isEmpty()){
+            throw new Exception("Processadora não localizada");
+        }
         var cliente = ProcessadoraFilial.builder()
-                .id(dto.getId())
-                .id_Matriz(dto.getId_Matriz())
-                .endereco(endereco)
+                .id(dto.get().getId())
+                .processadoraMatriz(dto.get().getProcessadoraMatriz())
+                .endereco(dto.get().getEndereco())
                 .cnpj(processadoraFilialDto.getCnpj())
                 .nome(processadoraFilialDto.getNome())
                 .build();
         processadoraFilialRepository.save(cliente);
-        return new ProcessadoraFilialDto (cliente);
+        return new ProcessadoraFilialDto(cliente);
     }
 
     public Long getProcessadoraFilialbyCNPJ(Long id) throws Exception {
         var processadora = processadoraFilialRepository.findByCnpj(id);
-        if (processadora.isEmpty()){
+        if (processadora.isEmpty()) {
             throw new Exception("CNPJ não localizado nas Processadoras");
         }
         return processadora.stream().findFirst().get().getCnpj();
     }
-
+    public ProcessadoraFilial findProcessadoraFilial(Long id) throws Exception {
+        var cliente = processadoraFilialRepository.findById(id);
+        if (cliente.isEmpty()) {
+            throw new Exception("Processadora não localizada");
+        }
+        return cliente.get();
+    }
 }

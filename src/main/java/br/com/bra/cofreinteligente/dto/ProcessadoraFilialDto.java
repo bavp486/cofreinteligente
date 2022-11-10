@@ -20,7 +20,7 @@ public class ProcessadoraFilialDto implements Serializable {
     public ProcessadoraFilialDto(ProcessadoraFilial processadoraFilial) {
         this.id = processadoraFilial.getId ();
         this.cnpj = processadoraFilial.getCnpj ();
-        this.id_Matriz = processadoraFilial.getId_Matriz ();
+        this.id_Matriz = processadoraFilial.getProcessadoraMatriz ().getId();
         this.id_endereco = processadoraFilial.getEndereco().getId();
         this.nome = processadoraFilial.getNome ();
     }

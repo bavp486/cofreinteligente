@@ -12,13 +12,15 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 public class ContratosDto implements Serializable {
-    private Long id_processadora;
-    private Long numero_contrato;
+    private Long idProcessadora;
+    private Long idCliente;
+    private Long numeroContrato;
     private BigDecimal valor;
 
     public ContratosDto(Contratos contratos) {
-        this.id_processadora = contratos.getId_processadora();
-        this.numero_contrato = contratos.getNumero_contrato();
+        this.idProcessadora = contratos.getProcessadoraFilial().getId();
+        this.idCliente = contratos.getClienteFilial().getId();
+        this.numeroContrato = contratos.getNumeroContrato();
         this.valor = contratos.getValor();
     }
 }

@@ -24,7 +24,8 @@ public class CofreService {
         var cofre = Cofre.builder()
                 .numeroCofre(dto.getNumeroCofre())
                 .tipoCofre(dto.getTipoCofre())
-                .idClienteFilial(clienteFilialService.getClienteFilial(dto.getIdClienteFilial()).getId())
+                .clienteFilial(
+                        clienteFilialService.findClienteFilial(dto.getIdClienteFilial()))
                 .build();
         cofreRepository.save(cofre);
         saldoCofreService.addAbreSaldoCofre(cofre.getNumeroCofre());
@@ -46,8 +47,8 @@ public class CofreService {
         return new CofreDto(cofre.get());
     }
 
-    public List<CofreDto> getAllCofreByIdCliente(Long idCliente){
-        return cofreRepository.findAllByIdClienteFilial(idCliente)
+    public List<CofreDto> getAllCofreByIdCliente(Long idCliente) throws Exception {
+        return cofreRepository.findAllByClienteFilial(clienteFilialService.findClienteFilial(idCliente))
                 .stream()
                 .map(CofreDto::new)
                 .toList();
@@ -58,11 +59,14 @@ public class CofreService {
     }
 
     public CofreDto alteraTipoCofreByNumCofre(Long numCofre, String tipoCofre) throws Exception {
-        var dto = getCofreByNumCofre(numCofre);
+        var dto = cofreRepository.findById(numCofre);
+        if(dto.isEmpty()){
+            throw new Exception("Cofre não localizado");
+        }
         var cofre = Cofre.builder()
                 .tipoCofre(tipoCofre)
-                .numeroCofre(dto.getNumeroCofre())
-                .idClienteFilial(dto.getIdClienteFilial())
+                .numeroCofre(dto.get().getNumeroCofre())
+                .clienteFilial(dto.get().getClienteFilial())
                 .build();
         cofreRepository.save(cofre);
         return new CofreDto(cofre);

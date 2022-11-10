@@ -17,14 +17,11 @@ public class ProcessadoraMatriz {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
-    @OneToMany(mappedBy = "id")
-    private Set<ProcessadoraFilial> processadoraFiliais;
-
+    @OneToMany(mappedBy = "processadoraMatriz")
+    private Set<ProcessadoraFilial> processadoraFilial;
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
-
-
     private Long cnpj;
     private String nome;
+
 }

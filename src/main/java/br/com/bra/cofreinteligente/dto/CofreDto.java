@@ -18,7 +18,7 @@ public class CofreDto implements Serializable {
 
     public CofreDto(Cofre cofre) {
         this.numeroCofre = cofre.getNumeroCofre();
-        this.idClienteFilial = cofre.getIdClienteFilial();
+        this.idClienteFilial = cofre.getClienteFilial().getId();
         this.tipoCofre = cofre.getTipoCofre();
     }
 }

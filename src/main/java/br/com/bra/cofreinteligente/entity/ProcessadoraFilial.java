@@ -18,17 +18,19 @@ public class ProcessadoraFilial {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+
     @ManyToOne
+    @JoinColumn(name = "idMatriz")
     private ProcessadoraMatriz processadoraMatriz;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "id_processadora")
+    @OneToMany(mappedBy = "processadoraFilial")
     private Set<Contratos> contratos;
 
     private Long cnpj;
-    private Long id_Matriz;
 
     private String nome;
+
 }

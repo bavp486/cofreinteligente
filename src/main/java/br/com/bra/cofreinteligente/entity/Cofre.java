@@ -27,6 +27,6 @@ public class Cofre {
     @ManyToOne
     private ClienteFilial clienteFilial;
 
-    private Long idClienteFilial;
+//    private Long idClienteFilial;
     private String tipoCofre;
 }

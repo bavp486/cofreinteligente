@@ -32,7 +32,7 @@ public class CofreControler {
     }
 
     @GetMapping("/Cliente/{id}")
-    public List<CofreDto> getAllCofreByIdCliente (@PathVariable(value = "id")Long id){
+    public List<CofreDto> getAllCofreByIdCliente (@PathVariable(value = "id")Long id) throws Exception {
         return cofreService.getAllCofreByIdCliente(id);
     }
 

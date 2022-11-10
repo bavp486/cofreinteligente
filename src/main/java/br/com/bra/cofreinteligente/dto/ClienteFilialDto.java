@@ -27,8 +27,7 @@ public class ClienteFilialDto implements Serializable {
         this.id = clienteFilial.getId();
         this.idMatriz = clienteFilial.getClienteMatriz().getId();
         this.id_endereco = clienteFilial.getEndereco().getId();
-        this.id_conta = clienteFilial.getId_conta();
-        this.numcontrato = clienteFilial.getNumcontrato();
+        this.id_conta = clienteFilial.getConta().getId();
         this.cnpj = clienteFilial.getCnpj();
         this.nome = clienteFilial.getNome();
     }

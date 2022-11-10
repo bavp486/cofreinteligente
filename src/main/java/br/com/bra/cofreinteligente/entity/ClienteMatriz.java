@@ -18,14 +18,12 @@ public class ClienteMatriz {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+
     @OneToMany(mappedBy = "clienteMatriz")
     private Set<ClienteFilial>  clienteFilial;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
-
-
-
     private String cnpj;
     private String nome;
 }

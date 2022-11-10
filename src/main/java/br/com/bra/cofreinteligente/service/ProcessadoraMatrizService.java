@@ -54,16 +54,13 @@ public class ProcessadoraMatrizService {
     }
 
     public ProcessadoraMatrizDto alteraNomeClientePorId(Long id, ProcessadoraMatrizDto processadoraMatrizDto) throws Exception {
-        var endereco = Endereco.builder()
-                .rua(processadoraMatrizDto.getEndereco().getRua())
-                .numero(processadoraMatrizDto.getEndereco().getNumero())
-                .cidade(processadoraMatrizDto.getEndereco().getCidade())
-                .uf(processadoraMatrizDto.getEndereco().getUf())
-                .build();
-        var dto = getProcessadoraMatriz ( id );
+        var dto = processadoraMatrizRepository.findById(id);
+        if(dto.isEmpty()){
+            throw new Exception("Processadora não localizada");
+        }
         var cliente = ProcessadoraMatriz.builder ()
-                .id(dto.getId())
-                .endereco(endereco)
+                .id(dto.get().getId())
+                .endereco(dto.get().getEndereco())
                 .cnpj(processadoraMatrizDto.getCnpj())
                 .nome(processadoraMatrizDto.getNome())
                 .build();

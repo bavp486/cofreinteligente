@@ -57,16 +57,13 @@ public class ClienteMatrizService {
     }
 
     public ClienteMatrizDto alteraNomeClientePorId(Long id, ClienteMatrizDto clienteMatrizDto) throws Exception {
-        var endereco = Endereco.builder()
-                .rua(clienteMatrizDto.getEndereco().getRua())
-                .numero(clienteMatrizDto.getEndereco().getNumero())
-                .cidade(clienteMatrizDto.getEndereco().getCidade())
-                .uf(clienteMatrizDto.getEndereco().getUf())
-                .build();
-        var dto = getClienteMatriz(id);
+        var dto = clienteMatrizRepository.findById(id);
+        if(dto.isEmpty()){
+            throw new Exception("Cliente não localizado");
+        }
         var cliente = ClienteMatriz.builder()
-                .id(dto.getId())
-                .endereco(endereco)
+                .id(dto.get().getId())
+                .endereco(dto.get().getEndereco())
                 .cnpj(clienteMatrizDto.getCnpj())
                 .nome(clienteMatrizDto.getNome())
                 .build();

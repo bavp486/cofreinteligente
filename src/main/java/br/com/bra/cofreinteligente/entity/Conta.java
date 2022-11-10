@@ -18,9 +18,9 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "id_conta")
-    private ClienteFilial clienteFilial;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(referencedColumnName = "id_conta")
+//    private ClienteFilial clienteFilial;
 
     @OneToMany(mappedBy = "idConta")
     private Set<SaldoConta> saldoContas;

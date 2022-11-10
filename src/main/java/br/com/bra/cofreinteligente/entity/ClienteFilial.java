@@ -18,9 +18,8 @@ public class ClienteFilial {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @OneToMany(mappedBy = "idClienteFilial")
+    @OneToMany(mappedBy = "clienteFilial")
     private Set<Cofre> cofre;
-
     @ManyToOne
     @JoinColumn(name = "idMatriz")
     private ClienteMatriz clienteMatriz;
@@ -28,14 +27,11 @@ public class ClienteFilial {
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
-  @OneToOne
+  @OneToOne(cascade =  CascadeType.ALL)
+  @JoinColumn(name = "idConta")
    private Conta conta;
 
-    @ManyToOne
-    private Contratos contratos;
-
-    private Long id_conta;
-    private Long numcontrato;
+//    private Long id_conta;
     private String cnpj;
     private String nome;
 

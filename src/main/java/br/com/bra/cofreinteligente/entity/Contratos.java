@@ -17,14 +17,13 @@ import java.util.Set;
 public class Contratos {
 
     @Id
-    private Long numero_contrato;
+    private Long numeroContrato;
     @ManyToOne
     private ProcessadoraFilial processadoraFilial;
 
-    @OneToMany(mappedBy = "numcontrato")
-    private Set<ClienteFilial> clienteFilials;
-
-    private Long id_processadora;
+    @OneToOne(cascade =  CascadeType.ALL)
+    @JoinColumn(name = "cliente")
+    private ClienteFilial clienteFilial;
 
     private BigDecimal valor;
 }

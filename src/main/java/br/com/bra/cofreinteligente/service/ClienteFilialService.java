@@ -1,14 +1,15 @@
 package br.com.bra.cofreinteligente.service;
 
 import br.com.bra.cofreinteligente.dto.ClienteFilialDto;
-import br.com.bra.cofreinteligente.entity.ClienteFilial;
-import br.com.bra.cofreinteligente.entity.ClienteMatriz;
-import br.com.bra.cofreinteligente.entity.Endereco;
+import br.com.bra.cofreinteligente.entity.*;
 import br.com.bra.cofreinteligente.repository.ClienteFilialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ClienteFilialService {
@@ -22,6 +23,9 @@ public class ClienteFilialService {
     @Autowired
     public ContaService contaService;
 
+    @Autowired
+    public  SaldoContaService saldoContaService;
+
 
 
     public ClienteFilialDto addClienteFilial(ClienteFilialDto dto){
@@ -32,18 +36,24 @@ public class ClienteFilialService {
                 .uf(dto.getEndereco().getUf())
                 .build();
 
+
+        var conta = Conta.builder()
+                .conta(dto.getConta().getConta())
+                .agencia(dto.getConta().getAgencia())
+                .build();
+
+
         var clienteMatriz = new ClienteMatriz();
         clienteMatriz.setId(dto.getIdMatriz());
         ClienteFilial cliente = ClienteFilial.builder()
                 .clienteMatriz(clienteMatriz)
                 .endereco(endereco)
-                .id_conta(
-                        contaService.addConta(dto.getConta().getAgencia(),dto.getConta().getConta()).getId())
-                .numcontrato(dto.getNumcontrato())
+                .conta(conta)
                 .cnpj(dto.getCnpj())
                 .nome(dto.getNome())
                 .build();
         clienteFilialRepository.save(cliente);
+        saldoContaService.addAbreSaldoConta(cliente.getConta().getId());
         return new ClienteFilialDto(cliente);
     }
 
@@ -70,21 +80,15 @@ public class ClienteFilialService {
     }
 
     public ClienteFilialDto alteraNomeClientePorId(Long id, ClienteFilialDto clienteFilialDto) throws Exception {
-        var endereco = Endereco.builder()
-                .rua(clienteFilialDto.getEndereco().getRua())
-                .numero(clienteFilialDto.getEndereco().getNumero())
-                .cidade(clienteFilialDto.getEndereco().getCidade())
-                .uf(clienteFilialDto.getEndereco().getUf())
-                .build();
-        var clienteMatriz = new ClienteMatriz();
-        clienteMatriz.setId(clienteFilialDto.getIdMatriz());
-        var dto = getClienteFilial(id);
+        var dto = clienteFilialRepository.findById(id);
+        if (dto.isEmpty()){
+            throw new Exception("Cliente não localizado");
+        }
         var cliente = ClienteFilial.builder()
-                .id(dto.getId())
-                .clienteMatriz(clienteMatriz)
-                .endereco(endereco)
-                .id_conta(dto.getId_conta())
-                .numcontrato(dto.getNumcontrato())
+                .id(dto.get().getId())
+                .clienteMatriz(dto.get().getClienteMatriz())
+                .endereco(dto.get().getEndereco())
+                .conta(dto.get().getConta())
                 .cnpj(clienteFilialDto.getCnpj())
                 .nome(clienteFilialDto.getNome())
                 .build();
@@ -92,11 +96,21 @@ public class ClienteFilialService {
         return new ClienteFilialDto(cliente);
     }
 
-    public Long getClienteFilialbyNum_Contrato (Long num_contrato) throws Exception {
-        var cliente = clienteFilialRepository.findAllByNumcontrato(num_contrato);
+//    public Long getClienteFilialbyNum_Contrato (Long num_contrato) throws Exception {
+//
+//        var cliente = clienteFilialRepository.findAllByContratos(num_contrato);
+//        if (cliente.isEmpty()){
+//            throw new Exception("Numero do contrato não existe no cliente");
+//        }
+//        return cliente.stream().findFirst().get().getNumcontrato() ;
+//    }
+
+    public ClienteFilial findClienteFilial(Long id) throws Exception {
+        var cliente = clienteFilialRepository.findById(id);
         if (cliente.isEmpty()){
-            throw new Exception("Numero do contrato não existe no cliente");
+            throw new Exception("Cliente não localizado");
         }
-        return cliente.stream().findFirst().get().getNumcontrato() ;
+        return cliente.get();
+        //  return clienteFilialRepository.findById(id).get();
     }
 }
