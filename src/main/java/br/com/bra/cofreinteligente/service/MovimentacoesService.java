@@ -44,14 +44,14 @@ public class MovimentacoesService {
     }
 
     public List<MovimentacoesDto> getAllByPeriod(LocalDateTime inicio, LocalDateTime fim){
-        return movimentacoesRepository.findByDataBetween(inicio, fim)
+        return movimentacoesRepository.findByDateBetween(inicio, fim)
                 .stream()
                 .map(MovimentacoesDto::new)
                 .toList();
     }
 
     public List<MovimentacoesDto> getByPeriodAndCofre(LocalDateTime inicio, LocalDateTime fim, Long numeroCofre){
-        return movimentacoesRepository.findByDataBetweenAndNumeroCofre(inicio, fim, numeroCofre)
+        return movimentacoesRepository.findByDateBetweenAndNumeroCofre(inicio, fim, numeroCofre)
                 .stream()
                 .map(MovimentacoesDto::new)
                 .toList();

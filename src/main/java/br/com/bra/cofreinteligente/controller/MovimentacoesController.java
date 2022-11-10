@@ -36,16 +36,16 @@ public class MovimentacoesController {
         return movimentacoesService.getMovimentacoes(id);
     }
 
-    @GetMapping("/periodocofre/{inicio}/{fim}/{numeroCofre}")
-    public List<MovimentacoesDto> getMovimentacoesByPeriodAndNumeroCofre(@PathVariable(value = "inicio") LocalDateTime inicio,
-                                                                         @PathVariable(value = "fim") LocalDateTime fim,
-                                                                         @PathVariable(value = "numeroCofre") Long numeroCofre){
+    @GetMapping("/buscar")
+    public List<MovimentacoesDto> getMovimentacoesByPeriodAndNumeroCofre(@RequestParam("inicio") LocalDateTime inicio,
+                                                                         @RequestParam("fim") LocalDateTime fim,
+                                                                         @RequestParam("numeroCofre") Long numeroCofre){
         return movimentacoesService.getByPeriodAndCofre(inicio, fim, numeroCofre);
     }
 
-    @GetMapping("/periodo/{inicio}/{fim}")
-    public List<MovimentacoesDto> getMovimentacoesByPeriodAndNumeroCofre(@PathVariable(value = "inicio") LocalDateTime inicio,
-                                                                         @PathVariable(value = "fim") LocalDateTime fim) {
+    @GetMapping("/periodo")
+    public List<MovimentacoesDto> getMovimentacoesByPeriodAndNumeroCofre(@RequestParam("inicio") LocalDateTime inicio,
+                                                                         @RequestParam("fim") LocalDateTime fim) {
         return movimentacoesService.getAllByPeriod(inicio, fim);
     }
 }
