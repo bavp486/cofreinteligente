@@ -1,9 +1,9 @@
 _id: req_6f0140c7f1544d198b099c5787d10b4f
 type: Request
 parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
-modified: 1667875304733
+modified: 1668111360498
 created: 1667864733458
-url: http://localhost:8080/ClienteFilial/1
+url: http://localhost:8080/ClienteFilial/3
 name: Busca Cliente Filial por Id
 description: ""
 method: GET

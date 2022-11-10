@@ -1,7 +1,7 @@
 _id: req_da45b38c55fc459d8bc9c3c33299658c
 type: Request
 parentId: fld_0f42bfa4633b4ba79411e2a708d43bd5
-modified: 1668040162469
+modified: 1668112820599
 created: 1667864389912
 url: http://localhost:8080/ClienteFilial
 name: Cadastra ClienteFilial
@@ -13,8 +13,6 @@ body:
     {
     	"idMatriz" : "1",
     	"id_cofre" : "1",
-    	"id_conta" : "1",
-    	"numcontrato" : "1",
     	"cnpj" : "21.717.963/0001-80",
     	"nome" : "Cliente Filial 1",
     	"endereco" : { 

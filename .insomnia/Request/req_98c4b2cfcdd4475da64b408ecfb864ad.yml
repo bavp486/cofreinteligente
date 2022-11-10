@@ -1,7 +1,7 @@
 _id: req_98c4b2cfcdd4475da64b408ecfb864ad
 type: Request
 parentId: fld_761a8c68cf45433c9b333beaec2badf1
-modified: 1668037596271
+modified: 1668112792940
 created: 1667878099993
 url: http://localhost:8080/ProcessadoraFilial
 name: Cadastra Processadora Filial2
@@ -11,8 +11,7 @@ body:
   mimeType: application/json
   text: |-
     {
-    	"id_Matriz" : "1",
-    	"id_endereco" : "2",
+    	"id_Matriz" : "8",
     	"cnpj" : "884238470001",
     	"nome" : "Processadora Filial 2",
     	"endereco" : { 
