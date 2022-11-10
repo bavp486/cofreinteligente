@@ -3,6 +3,7 @@ package br.com.bra.cofreinteligente.dto;
 import br.com.bra.cofreinteligente.entity.ClienteMatriz;
 import br.com.bra.cofreinteligente.entity.Cofre;
 import br.com.bra.cofreinteligente.entity.Movimentacoes;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +18,8 @@ public class MovimentacoesDto {
     private Long id;
     private Cofre cofre;
     private Long numeroCofre;
+
+    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
     private LocalDateTime data;
     private BigDecimal valorRecolhido;
 

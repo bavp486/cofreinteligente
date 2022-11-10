@@ -8,5 +8,7 @@ import java.util.List;
 
 public interface MovimentacoesRepository extends JpaRepository<Movimentacoes, Long> {
 
+    List<Movimentacoes> findByDataBetween(LocalDateTime inicio, LocalDateTime fim);
+
     List<Movimentacoes> findByDataBetweenAndNumeroCofre(LocalDateTime inicio, LocalDateTime fim, Long numeroCofre);
 }
