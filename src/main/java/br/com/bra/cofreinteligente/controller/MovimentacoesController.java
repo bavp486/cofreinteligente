@@ -1,9 +1,13 @@
 package br.com.bra.cofreinteligente.controller;
 
+import br.com.bra.cofreinteligente.Utils.CSVService;
 import br.com.bra.cofreinteligente.dto.MovimentacoesDto;
 import br.com.bra.cofreinteligente.service.MovimentacoesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -11,7 +15,10 @@ import java.util.List;
 public class MovimentacoesController {
 
     @Autowired
-    private MovimentacoesService movimentacoesService;
+    public MovimentacoesService movimentacoesService;
+
+    @Autowired
+    public CSVService csvService;
 
     @PostMapping
     public MovimentacoesDto addMovimentacoesServices(@RequestBody MovimentacoesDto movimentacoesDto) throws Exception {
@@ -37,5 +44,12 @@ public class MovimentacoesController {
     @GetMapping("/periodo")
     public List<MovimentacoesDto> getMovimentacoesByPeriod(@RequestParam String inicio, String fim) {
         return movimentacoesService.getAllByPeriod(inicio, fim);
+    }
+
+    @GetMapping("/relatorio")
+    public void getMovimentaceosCsv(HttpServletResponse servletResponse) throws Exception {
+        servletResponse.setContentType("text/csv");
+        servletResponse.addHeader("Content-Disposition","attachment; filename=\"movimentacao.csv\"");
+        csvService.writeMovimentacaoToCsv(servletResponse.getWriter());
     }
 }
