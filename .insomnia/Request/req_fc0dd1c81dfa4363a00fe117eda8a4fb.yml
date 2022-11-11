@@ -1,25 +1,25 @@
-_id: req_66a2853cf4ec4609a74193e7d6f9e1e2
+_id: req_fc0dd1c81dfa4363a00fe117eda8a4fb
 type: Request
 parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668129947150
-created: 1668115684878
-url: http://localhost:8080/Movimentacoes/periodo
-name: Busca Movimentacoes por periodo
+modified: 1668130138195
+created: 1668128706241
+url: http://localhost:8080/Movimentacoes/periodocofre/1
+name: Busca Movimentacoes por periodo por cofre
 description: ""
 method: GET
 body: {}
 parameters:
-  - id: pair_6a92572f48144269b945b2d4c7798ff7
+  - id: pair_157507b4597c4311b04f8191a3e77e54
     name: inicio
     value: 2022-11-10
     description: ""
-  - id: pair_df65490c08784bceb9fec7152be082db
+  - id: pair_a5961f2699e541ae95975d9fb3b4e762
     name: fim
     value: 2022-11-12
     description: ""
 headers: []
 authentication: {}
-metaSortKey: -1668034525772.625
+metaSortKey: -1668033828068.8125
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

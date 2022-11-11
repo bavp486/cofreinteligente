@@ -1,7 +1,7 @@
 _id: req_c7658acea30442f3aa508881b616c7d9
 type: Request
 parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668118633675
+modified: 1668130074770
 created: 1668044293626
 url: http://localhost:8080/Movimentacoes
 name: Cadastra Movimentacoes
@@ -14,7 +14,11 @@ body:
     	"numeroCofre" : 1,
     	"valorRecolhido" : 100000
     }
-parameters: []
+parameters:
+  - id: pair_bdf97500519f42b6bf8333bd1b3db2f2
+    name: ""
+    value: ""
+    description: ""
 headers:
   - name: Content-Type
     value: application/json
