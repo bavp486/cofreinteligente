@@ -1,7 +1,7 @@
 _id: req_394b8d5ec0a7450d9f3402d94a59bce3
 type: Request
-parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
-modified: 1667939365699
+parentId: fld_28ae92e24fec4162b36be7e84c852c23
+modified: 1668207415354
 created: 1667939357075
 url: http://localhost:8080/Cofre/12
 name: Deleta Cofre por NumCofre
@@ -11,7 +11,7 @@ body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1667925510126.9062
+metaSortKey: -1665699597292.125
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

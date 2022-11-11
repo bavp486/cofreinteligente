@@ -1,17 +1,17 @@
-_id: req_8741cdc916b14b2284095a8603ee4286
+_id: req_d3c8070f06da47f0b4d1c7a9d60a2e06
 type: Request
-parentId: fld_28ae92e24fec4162b36be7e84c852c23
-modified: 1668207412209
-created: 1667925582910
-url: http://localhost:8080/Contratos/1
-name: Deleta Contratos por Id
+parentId: fld_93f6456e22fa4b04b99e8f310f9421cf
+modified: 1668207320156
+created: 1668207307111
+url: http://localhost:8080/Usuarios/6966292
+name: Deleta Usuarios
 description: ""
 method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1665699597295.25
+metaSortKey: -1665699597542.125
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

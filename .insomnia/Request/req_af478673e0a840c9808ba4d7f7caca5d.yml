@@ -1,7 +1,7 @@
 _id: req_af478673e0a840c9808ba4d7f7caca5d
 type: Request
 parentId: fld_64d31e4101d64d0d98a2a161dfe22aed
-modified: 1668191000164
+modified: 1668204112151
 created: 1667923094802
 url: http://localhost:8080/Contratos
 name: Cadastra Contratos
@@ -12,7 +12,7 @@ body:
   text: |-
     {
     	"idCliente" : 3,
-    	"idProcessadora" : 10,
+    	"idProcessadora" : 9,
     	"numeroContrato" : 1,
     	"valor" : 100
     }

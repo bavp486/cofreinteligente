@@ -1,0 +1,29 @@
+_id: req_480fe885c4e643e8aee3bb534600c4f0
+type: Request
+parentId: fld_93f6456e22fa4b04b99e8f310f9421cf
+modified: 1668207279928
+created: 1668207101527
+url: http://localhost:8080/Usuarios
+name: Altera Acesso Usuarios
+description: ""
+method: PATCH
+body: {}
+parameters:
+  - id: pair_a5e859d6eb84459986484006f474da9b
+    name: funcional
+    value: "6966292"
+    description: ""
+  - id: pair_8baf2f4cdc8648c094cfed2dbcff966a
+    name: acesso
+    value: relatorio
+    description: ""
+headers: []
+authentication: {}
+metaSortKey: -1665699597545.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

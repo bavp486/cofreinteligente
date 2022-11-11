@@ -1,26 +1,27 @@
-_id: req_2c7476c6a30e45f29052f3db10623532
+_id: req_2a3d83f00c5b493ab912fd094e8a556c
 type: Request
-parentId: fld_4ad96992b50a4f59a0cbfe39ae0d9329
-modified: 1668204138169
-created: 1667939218757
-url: http://localhost:8080/Cofre
-name: Cadastra Cofre 2
+parentId: fld_93f6456e22fa4b04b99e8f310f9421cf
+modified: 1668207343118
+created: 1668206125569
+url: http://localhost:8080/Usuarios
+name: Cadastra Usuario
 description: ""
 method: POST
 body:
   mimeType: application/json
   text: |-
     {
-    	"numeroCofre" : "12",
-    	"idClienteFilial" : "5",
-    	"tipoCofre" : "4x4"
+    	"funcional" : "6966292",
+    	"nome" : "Bruno",
+    	"acesso" : "Admin"
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_6ff09d6460e649159a90d4589cdd126a
 authentication: {}
-metaSortKey: -1667932076410.5
+metaSortKey: -1665699597564
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

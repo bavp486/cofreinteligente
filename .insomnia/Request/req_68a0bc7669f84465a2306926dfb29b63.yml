@@ -1,9 +1,9 @@
 _id: req_68a0bc7669f84465a2306926dfb29b63
 type: Request
-parentId: fld_582847cd6a8643bc938e0fd41a446106
-modified: 1667881830721
+parentId: fld_28ae92e24fec4162b36be7e84c852c23
+modified: 1668207404864
 created: 1667877725157
-url: http://localhost:8080/ProcessadoraMatriz/2
+url: http://localhost:8080/ProcessadoraMatriz/7
 name: Deleta Processadora Matriz por Id
 description: ""
 method: DELETE
@@ -11,7 +11,7 @@ body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1665699597339
+metaSortKey: -1665699597314
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
