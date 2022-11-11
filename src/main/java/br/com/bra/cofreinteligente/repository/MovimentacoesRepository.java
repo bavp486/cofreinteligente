@@ -22,5 +22,7 @@ public interface MovimentacoesRepository extends JpaRepository<Movimentacoes, Lo
 
     List<Movimentacoes> findByDataBetweenAndCofre(LocalDate inicio, LocalDate fim, Cofre cofre);
 
+    List<Movimentacoes> findByCofre(Cofre cofre);
+
     //    List<Movimentacoes> findAll();
 }

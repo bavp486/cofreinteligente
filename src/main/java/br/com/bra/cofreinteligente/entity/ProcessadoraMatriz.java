@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -21,7 +23,9 @@ public class ProcessadoraMatriz {
     private Set<ProcessadoraFilial> processadoraFilial;
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
-    private Long cnpj;
+    @Size(min = 14, max = 14)
+    private String cnpj;
+    @NotNull
     private String nome;
 
 }

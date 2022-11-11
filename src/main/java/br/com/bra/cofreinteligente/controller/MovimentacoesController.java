@@ -47,9 +47,16 @@ public class MovimentacoesController {
     }
 
     @GetMapping("/relatorio")
-    public void getMovimentaceosCsv(HttpServletResponse servletResponse) throws Exception {
+    public void getMovimentacoesCsv(HttpServletResponse servletResponse) throws Exception {
         servletResponse.setContentType("text/csv");
-        servletResponse.addHeader("Content-Disposition","attachment; filename=\"movimentacao.csv\"");
+        servletResponse.addHeader("Content-Disposition","attachment; filename=\"movimentacaoGeral.csv\"");
         csvService.writeMovimentacaoToCsv(servletResponse.getWriter());
+    }
+
+    @GetMapping("/Relatorio/{id}")
+    public void getMovimentacoesByClienteCsv(HttpServletResponse servletResponse, @PathVariable(value = "id")Long id) throws Exception {
+        servletResponse.setContentType("text/csv");
+        servletResponse.addHeader("Content-Disposition","attachment; filename=\"movimentacaoCliente.csv\"");
+        csvService.writeMovimentacaoByClienteToCsv(servletResponse.getWriter(), id);
     }
 }

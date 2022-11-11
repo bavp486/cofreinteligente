@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,9 +18,11 @@ import java.util.Optional;
 @NoArgsConstructor
 public class MovimentacoesDto {
     private Long id;
+    @NotNull
     private Long numeroCofre;
 
     private LocalDate data;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private BigDecimal valorRecolhido;
 
 

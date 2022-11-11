@@ -4,8 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -32,7 +35,10 @@ public class ClienteFilial {
    private Conta conta;
 
 //    private Long id_conta;
+    @Size(min = 14, max = 14)
     private String cnpj;
+
+    @NotNull
     private String nome;
 
 }

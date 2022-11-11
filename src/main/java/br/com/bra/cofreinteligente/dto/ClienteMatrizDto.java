@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 
@@ -12,10 +14,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ClienteMatrizDto implements Serializable {
     private Long id;
-
+    @NotNull
     private EnderecoDto endereco;
     private Long id_endereco;
+    @Size(min = 14, max = 14)
     private String cnpj;
+    @NotNull
     private String nome;
 
     public ClienteMatrizDto(ClienteMatriz clienteMatriz) {

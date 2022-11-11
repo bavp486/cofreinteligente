@@ -5,16 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 public class ProcessadoraFilialDto implements Serializable {
     private Long id;
+    @NotNull
     private EnderecoDto endereco;
-    private Long cnpj;
+    @Size(min = 14, max = 14)
+    private String cnpj;
     private Long id_Matriz;
     private Long id_endereco;
+    @NotNull
     private String nome;
 
     public ProcessadoraFilialDto(ProcessadoraFilial processadoraFilial) {

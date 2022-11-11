@@ -76,7 +76,7 @@ public class ProcessadoraFilialService {
         return new ProcessadoraFilialDto(cliente);
     }
 
-    public Long getProcessadoraFilialbyCNPJ(Long id) throws Exception {
+    public String getProcessadoraFilialbyCNPJ(Long id) throws Exception {
         var processadora = processadoraFilialRepository.findByCnpj(id);
         if (processadora.isEmpty()) {
             throw new Exception("CNPJ não localizado nas Processadoras");

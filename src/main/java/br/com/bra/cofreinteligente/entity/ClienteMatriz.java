@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Data
@@ -24,6 +26,8 @@ public class ClienteMatriz {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
+    @Size(min = 14, max = 14)
     private String cnpj;
+    @NotNull
     private String nome;
 }

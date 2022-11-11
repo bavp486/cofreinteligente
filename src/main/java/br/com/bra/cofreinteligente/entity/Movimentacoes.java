@@ -27,7 +27,7 @@ public class Movimentacoes {
     @JoinColumn(name = "numeroCofre")
     private Cofre cofre;
 
-    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm:ss.SSSZ")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate data;
 
     private BigDecimal valorRecolhido;

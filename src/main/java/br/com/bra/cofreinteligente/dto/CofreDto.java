@@ -4,6 +4,7 @@ import br.com.bra.cofreinteligente.entity.Cofre;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import java.io.Serializable;
 
@@ -14,6 +15,7 @@ import java.io.Serializable;
 public class CofreDto implements Serializable {
     private Long numeroCofre;
     private Long idClienteFilial;
+    @Nullable
     private String tipoCofre;
 
     public CofreDto(Cofre cofre) {
