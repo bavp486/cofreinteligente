@@ -57,19 +57,23 @@ public class MovimentacoesService {
         return new MovimentacoesDto(movimentacao.get());
     }
 
-    public List<MovimentacoesDto> getAllByPeriod(LocalDate inicio, LocalDate fim){
-        return movimentacoesRepository.findByDataBetween(inicio, fim)
+    public List<MovimentacoesDto> getAllByPeriod(String inicio, String fim){
+        var dataIni = LocalDate.parse(inicio);
+        var dataFim = LocalDate.parse(fim);
+        return movimentacoesRepository.findByDataBetween(dataIni, dataFim)
                 .stream()
                 .map(MovimentacoesDto::new)
                 .toList();
     }
 
-    public List<MovimentacoesDto> getByPeriodAndCofre(LocalDate inicio, LocalDate fim, Long numeroCofre) throws Exception {
+    public List<MovimentacoesDto> getByPeriodAndCofre(String inicio, String fim, Long numeroCofre) throws Exception {
+        var dataIni = LocalDate.parse(inicio);
+        var dataFim = LocalDate.parse(fim);
         var cofre = cofreRepository.findById(numeroCofre);
         if(cofre.isEmpty()){
             throw new Exception("Cofre não localizado");
         }
-        return movimentacoesRepository.findByDataBetweenAndCofre(inicio, fim, cofre.get())
+        return movimentacoesRepository.findByDataBetweenAndCofre(dataIni, dataFim, cofre.get())
                 .stream()
                 .map(MovimentacoesDto::new)
                 .toList();

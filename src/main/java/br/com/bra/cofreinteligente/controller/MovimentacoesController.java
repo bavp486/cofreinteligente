@@ -1,25 +1,11 @@
 package br.com.bra.cofreinteligente.controller;
 
 import br.com.bra.cofreinteligente.dto.MovimentacoesDto;
-import br.com.bra.cofreinteligente.dto.MovimentacoesDto;
-import br.com.bra.cofreinteligente.dto.MovimentacoesDto;
 import br.com.bra.cofreinteligente.service.MovimentacoesService;
-import br.com.bra.cofreinteligente.service.MovimentacoesService;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-class RecebeData{
-    private LocalDate inicio;
-    private LocalDate fim;
-}
 @RestController
 @RequestMapping("/Movimentacoes")
 public class MovimentacoesController {
@@ -44,16 +30,12 @@ public class MovimentacoesController {
     }
 
     @GetMapping("/periodocofre/{numeroCofre}")
-    public List<MovimentacoesDto> getMovimentacoesByPeriodAndNumeroCofre(@PathVariable(value = "numeroCofre") Long numeroCofre, @RequestBody RecebeData recebeData) throws Exception {
-        var inicio = recebeData.getInicio();
-        var fim = recebeData.getFim();
+    public List<MovimentacoesDto> getMovimentacoesByPeriodAndNumeroCofre(@PathVariable(value = "numeroCofre") Long numeroCofre, @RequestParam String inicio, String fim) throws Exception {
         return movimentacoesService.getByPeriodAndCofre(inicio, fim, numeroCofre);
     }
 
     @GetMapping("/periodo")
-    public List<MovimentacoesDto> getMovimentacoesByPeriod(@RequestBody RecebeData recebeData) {
-        var inicio = recebeData.getInicio();
-        var fim = recebeData.getFim();
+    public List<MovimentacoesDto> getMovimentacoesByPeriod(@RequestParam String inicio, String fim) {
         return movimentacoesService.getAllByPeriod(inicio, fim);
     }
 }

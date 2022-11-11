@@ -4,6 +4,7 @@ import br.com.bra.cofreinteligente.entity.Cofre;
 import br.com.bra.cofreinteligente.entity.Movimentacoes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
@@ -19,4 +20,6 @@ public interface MovimentacoesRepository extends JpaRepository<Movimentacoes, Lo
     List<Movimentacoes> findByDataBetween(LocalDate inicio, LocalDate fim);
 
     List<Movimentacoes> findByDataBetweenAndCofre(LocalDate inicio, LocalDate fim, Cofre cofre);
+
+//    List<Movimentacoes> findAll();
 }

@@ -23,7 +23,7 @@ public class SaldoContaController {
     }
 
     @GetMapping("/{idConta}")
-    public List<SaldoContaDto> getAllSaldoContabyIdConta(@PathVariable(value = "idConta")Long idConta){
+    public List<SaldoContaDto> getAllSaldoContabyIdConta(@PathVariable(value = "idConta")Long idConta) throws Exception {
         return saldoContaService.getAllSaldoContaByIdConta(idConta);
     }
 

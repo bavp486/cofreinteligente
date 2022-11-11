@@ -22,8 +22,8 @@ public class SaldoContaDto implements Serializable {
     private BigDecimal saldo;
 
     public SaldoContaDto(SaldoConta saldoConta) {
-        this.id = saldoConta.getIdConta();
-        this.idConta = saldoConta.getIdConta();
+        this.id = saldoConta.getId();
+        this.idConta = saldoConta.getConta().getId();
         this.data = saldoConta.getData();
         this.saldo = saldoConta.getSaldo();
     }
