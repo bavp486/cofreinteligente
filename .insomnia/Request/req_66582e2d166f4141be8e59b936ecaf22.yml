@@ -1,17 +1,17 @@
-_id: req_09c716f375924fa9af899b72270926d1
+_id: req_66582e2d166f4141be8e59b936ecaf22
 type: Request
-parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668188941524
-created: 1668175645755
-url: http://localhost:8080/Movimentacoes/relatorio
-name: Busca Movimentacoes CSV
+parentId: fld_5d33d79977cb40c882ed59dbdc56b86b
+modified: 1668189181462
+created: 1668189172866
+url: http://localhost:8080/SaldoCofre/Relatorio/3
+name: BuscaSaldoCofre em CSV por cliente
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1668033479216.9062
+metaSortKey: -1667962580761
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

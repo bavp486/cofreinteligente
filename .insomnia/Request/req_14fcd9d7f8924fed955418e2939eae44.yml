@@ -1,17 +1,17 @@
-_id: req_09c716f375924fa9af899b72270926d1
+_id: req_14fcd9d7f8924fed955418e2939eae44
 type: Request
 parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668188941524
-created: 1668175645755
-url: http://localhost:8080/Movimentacoes/relatorio
-name: Busca Movimentacoes CSV
+modified: 1668189123206
+created: 1668188947648
+url: http://localhost:8080/Movimentacoes/Relatorio/5
+name: Busca Movimentacoes CSV por Cliente
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1668033479216.9062
+metaSortKey: -1668033304790.9531
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

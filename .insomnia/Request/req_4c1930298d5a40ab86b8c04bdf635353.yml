@@ -1,17 +1,17 @@
-_id: req_c7658acea30442f3aa508881b616c7d9
+_id: req_4c1930298d5a40ab86b8c04bdf635353
 type: Request
 parentId: fld_d615c5e867e543baa405a07382cb1096
-modified: 1668191008082
-created: 1668044293626
+modified: 1668191010956
+created: 1668188874318
 url: http://localhost:8080/Movimentacoes
-name: Cadastra Movimentacoes
+name: Cadastra Movimentacoes 2
 description: ""
 method: POST
 body:
   mimeType: application/json
   text: |-
     {
-    	"numeroCofre" : 1,
+    	"numeroCofre" : 12,
     	"valorRecolhido" : 100000
     }
 parameters:
@@ -23,7 +23,7 @@ headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1668044293626
+metaSortKey: -1668041502810.75
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
