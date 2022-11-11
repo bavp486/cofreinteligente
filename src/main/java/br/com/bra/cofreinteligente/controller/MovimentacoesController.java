@@ -14,7 +14,7 @@ public class MovimentacoesController {
     private MovimentacoesService movimentacoesService;
 
     @PostMapping
-    public MovimentacoesDto addMovimentacoesServices(@RequestBody MovimentacoesDto movimentacoesDto){
+    public MovimentacoesDto addMovimentacoesServices(@RequestBody MovimentacoesDto movimentacoesDto) throws Exception {
         return movimentacoesService.addMovimentacoes(movimentacoesDto);
     }
 

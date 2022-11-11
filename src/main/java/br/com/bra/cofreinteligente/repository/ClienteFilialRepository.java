@@ -1,6 +1,7 @@
 package br.com.bra.cofreinteligente.repository;
 
 import br.com.bra.cofreinteligente.entity.ClienteFilial;
+import br.com.bra.cofreinteligente.entity.Cofre;
 import br.com.bra.cofreinteligente.entity.Contratos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,4 +17,5 @@ public interface ClienteFilialRepository extends JpaRepository<ClienteFilial, Lo
 //            nativeQuery = true)
 //    List<ClienteFilial> findAllByNumcontrato(@Param("num")Long num_contrato);
 
+    Optional<ClienteFilial> findByCofre (Cofre cofre);
 }

@@ -29,8 +29,11 @@ public class MovimentacoesService {
     @Autowired
     public SaldoCofreService saldoCofreService;
 
+    @Autowired
+    public  SaldoContaService saldoContaService;
 
-    public MovimentacoesDto addMovimentacoes(MovimentacoesDto movimentacoesDto){
+
+    public MovimentacoesDto addMovimentacoes(MovimentacoesDto movimentacoesDto) throws Exception {
         var cofre = new Cofre();
         cofre.setNumeroCofre(movimentacoesDto.getNumeroCofre());
         Movimentacoes movimentacao = Movimentacoes.builder()
@@ -39,7 +42,8 @@ public class MovimentacoesService {
                 .valorRecolhido(movimentacoesDto.getValorRecolhido())
                 .build();
         movimentacoesRepository.save(movimentacao);
-        saldoCofreService.addSaldoNaConta(movimentacao);
+        saldoCofreService.addSaldoCofre(movimentacao);
+        saldoContaService.addSaldoConta(movimentacao);
         return new MovimentacoesDto(movimentacao);
     }
 

@@ -10,4 +10,5 @@ public interface CofreRepository extends JpaRepository<Cofre, Long> {
 
     List<Cofre> findAllByClienteFilial (ClienteFilial clienteFilial);
 
+
 }

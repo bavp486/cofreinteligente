@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public interface MovimentacoesRepository extends JpaRepository<Movimentacoes, Long> {
 
@@ -21,5 +22,5 @@ public interface MovimentacoesRepository extends JpaRepository<Movimentacoes, Lo
 
     List<Movimentacoes> findByDataBetweenAndCofre(LocalDate inicio, LocalDate fim, Cofre cofre);
 
-//    List<Movimentacoes> findAll();
+    //    List<Movimentacoes> findAll();
 }

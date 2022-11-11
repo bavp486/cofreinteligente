@@ -50,7 +50,23 @@ public class SaldoCofreService {
                 .toList();
     }
 
-    public void addSaldoNaConta(Movimentacoes movimentacoes){
-
+    public void addSaldoCofre(Movimentacoes movimentacoes){
+            var saldoCofre = saldoCofreRepository.findByCofreAndData(movimentacoes.getCofre(),movimentacoes.getData());
+            if(saldoCofre.isEmpty()){
+                var novaData = SaldoCofre.builder()
+                        .cofre(movimentacoes.getCofre())
+                        .data(movimentacoes.getData())
+                        .saldo(BigDecimal.ZERO.add(movimentacoes.getValorRecolhido()))
+                        .build();
+                saldoCofreRepository.save(novaData);
+            } else {
+                var addSaldo = SaldoCofre.builder()
+                        .id(saldoCofre.get().getId())
+                        .cofre(saldoCofre.get().getCofre())
+                        .data(saldoCofre.get().getData())
+                        .saldo(saldoCofre.get().getSaldo().add(movimentacoes.getValorRecolhido()))
+                        .build();
+                saldoCofreRepository.save(addSaldo);
+            }
     }
 }
