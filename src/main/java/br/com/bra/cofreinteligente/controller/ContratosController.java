@@ -32,11 +32,11 @@ public class ContratosController {
         return contratosService.getContratosByiD(id);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteContratosById(@PathVariable(value = "id") Long id) throws Exception {
-        contratosService.deleteContratos(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteContratosById(@PathVariable(value = "id") Long id) throws Exception {
+//        contratosService.deleteContratos(id);
+//        return ResponseEntity.noContent().build();
+//    }
 
     @PatchMapping("/{id}/{valor}")
     public ContratosDto alteraContratosValorById (@PathVariable(value = "id")Long id, @PathVariable(value = "valor")Long valor) throws Exception {

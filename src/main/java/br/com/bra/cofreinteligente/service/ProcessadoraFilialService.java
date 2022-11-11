@@ -56,9 +56,9 @@ public class ProcessadoraFilialService {
     }
 
 
-    public void delete(Long id) throws Exception {
-        processadoraFilialRepository.deleteById(getProcessadoraFilial(id).getId());
-    }
+//    public void delete(Long id) throws Exception {
+//        processadoraFilialRepository.deleteById(getProcessadoraFilial(id).getId());
+//    }
 
     public ProcessadoraFilialDto alteraNomeProcessadoraFilialPorId(Long id, ProcessadoraFilialDto processadoraFilialDto) throws Exception {
         var dto = processadoraFilialRepository.findById(id);

@@ -36,11 +36,11 @@ public class CofreControler {
         return cofreService.getAllCofreByIdCliente(id);
     }
 
-    @DeleteMapping("/{numCofre}")
-    public ResponseEntity<Void> deleteCofreByNumCofre (@PathVariable(value = "numCofre")Long numCofre) throws Exception {
-        cofreService.deleteCofreByNumCofre(numCofre);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{numCofre}")
+//    public ResponseEntity<Void> deleteCofreByNumCofre (@PathVariable(value = "numCofre")Long numCofre) throws Exception {
+//        cofreService.deleteCofreByNumCofre(numCofre);
+//        return ResponseEntity.noContent().build();
+//    }
 
     @PatchMapping("/{numCofre}/{tCofre}")
     public CofreDto alteraTipoCofreByNumCofre(@PathVariable(value = "numCofre")Long numCofre,@PathVariable(value = "tCofre") String tCofre) throws Exception {

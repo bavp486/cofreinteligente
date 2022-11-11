@@ -52,9 +52,9 @@ public class ClienteMatrizService {
     }
 
 
-    public void delete(Long id) throws Exception {
-        clienteMatrizRepository.deleteById(getClienteMatriz(id).getId());
-    }
+//    public void delete(Long id) throws Exception {
+//        clienteMatrizRepository.deleteById(getClienteMatriz(id).getId());
+//    }
 
     public ClienteMatrizDto alteraNomeClientePorId(Long id, ClienteMatrizDto clienteMatrizDto) throws Exception {
         var dto = clienteMatrizRepository.findById(id);

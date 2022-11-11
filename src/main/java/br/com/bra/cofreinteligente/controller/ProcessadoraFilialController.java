@@ -33,11 +33,11 @@ public class ProcessadoraFilialController {
         return processadoraFilialService.getProcessadoraFilial ( id );
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProcessadoraFilialById(@PathVariable(value = "id") Long id) throws Exception {
-        processadoraFilialService.delete(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteProcessadoraFilialById(@PathVariable(value = "id") Long id) throws Exception {
+//        processadoraFilialService.delete(id);
+//        return ResponseEntity.noContent().build();
+//    }
 
     @PatchMapping("/{id}")
     public ProcessadoraFilialDto alteraProcessadoraFilialNameById (@PathVariable(value = "id")Long id, @RequestBody ProcessadoraFilialDto processadoraFilialDto) throws Exception {

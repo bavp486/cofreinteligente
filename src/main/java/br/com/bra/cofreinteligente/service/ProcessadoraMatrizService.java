@@ -49,9 +49,9 @@ public class ProcessadoraMatrizService {
     }
 
 
-    public void delete(Long id) throws Exception {
-        processadoraMatrizRepository.deleteById(getProcessadoraMatriz ( id ).getId());
-    }
+//    public void delete(Long id) throws Exception {
+//        processadoraMatrizRepository.deleteById(getProcessadoraMatriz ( id ).getId());
+//    }
 
     public ProcessadoraMatrizDto alteraNomeClientePorId(Long id, ProcessadoraMatrizDto processadoraMatrizDto) throws Exception {
         var dto = processadoraMatrizRepository.findById(id);

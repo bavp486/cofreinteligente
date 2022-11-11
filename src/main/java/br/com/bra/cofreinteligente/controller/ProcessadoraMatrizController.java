@@ -30,11 +30,11 @@ public class ProcessadoraMatrizController {
         return processadoraMatrizService.getProcessadoraMatriz (id);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProcessadoraMatrizById(@PathVariable(value = "id") Long id) throws Exception {
-        processadoraMatrizService.delete(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteProcessadoraMatrizById(@PathVariable(value = "id") Long id) throws Exception {
+//        processadoraMatrizService.delete(id);
+//        return ResponseEntity.noContent().build();
+//    }
 
     @PatchMapping("/{id}")
     public ProcessadoraMatrizDto alteraProcessadoraMatrizNameById (@PathVariable(value = "id") Long id, @RequestBody ProcessadoraMatrizDto processadoraMatrizDto) throws Exception {

@@ -75,35 +75,20 @@ public class ClienteFilialService {
     }
 
 
-    public void delete(Long id) throws Exception {
-        clienteFilialRepository.deleteById(getClienteFilial(id).getId());
-    }
+//    public void delete(Long id) throws Exception {
+//        clienteFilialRepository.deleteById(getClienteFilial(id).getId());
+//    }
 
     public ClienteFilialDto alteraNomeClientePorId(Long id, ClienteFilialDto clienteFilialDto) throws Exception {
         var dto = clienteFilialRepository.findById(id);
         if (dto.isEmpty()){
             throw new Exception("Cliente não localizado");
         }
-        var cliente = ClienteFilial.builder()
-                .id(dto.get().getId())
-                .clienteMatriz(dto.get().getClienteMatriz())
-                .endereco(dto.get().getEndereco())
-                .conta(dto.get().getConta())
-                .cnpj(clienteFilialDto.getCnpj())
-                .nome(clienteFilialDto.getNome())
-                .build();
-        clienteFilialRepository.save(cliente);
-        return new ClienteFilialDto(cliente);
+        dto.get().setCnpj(clienteFilialDto.getCnpj());
+        dto.get().setNome(clienteFilialDto.getNome());
+        clienteFilialRepository.save(dto.get());
+        return new ClienteFilialDto(dto.get());
     }
-
-//    public Long getClienteFilialbyNum_Contrato (Long num_contrato) throws Exception {
-//
-//        var cliente = clienteFilialRepository.findAllByContratos(num_contrato);
-//        if (cliente.isEmpty()){
-//            throw new Exception("Numero do contrato não existe no cliente");
-//        }
-//        return cliente.stream().findFirst().get().getNumcontrato() ;
-//    }
 
     public ClienteFilial findClienteFilial(Long id) throws Exception {
         var cliente = clienteFilialRepository.findById(id);
@@ -111,6 +96,5 @@ public class ClienteFilialService {
             throw new Exception("Cliente não localizado");
         }
         return cliente.get();
-        //  return clienteFilialRepository.findById(id).get();
     }
 }

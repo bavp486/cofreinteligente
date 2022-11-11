@@ -32,11 +32,11 @@ public class ClienteMatrizController {
         return clienteMatrizService.getClienteMatriz(id);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteClienteMatrizById(@PathVariable(value = "id") Long id) throws Exception {
-        clienteMatrizService.delete(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteClienteMatrizById(@PathVariable(value = "id") Long id) throws Exception {
+//        clienteMatrizService.delete(id);
+//        return ResponseEntity.noContent().build();
+//    }
 
     @PatchMapping("/{id}")
     public ClienteMatrizDto alteraClienteMatrizNameById (@PathVariable(value = "id") Long id, @RequestBody ClienteMatrizDto clienteMatrizDto) throws Exception {

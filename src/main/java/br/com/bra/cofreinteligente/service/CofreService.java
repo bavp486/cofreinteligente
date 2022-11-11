@@ -54,9 +54,9 @@ public class CofreService {
                 .toList();
     }
 
-    public void deleteCofreByNumCofre (Long numCofre) throws Exception {
-        cofreRepository.deleteById(getCofreByNumCofre(numCofre).getNumeroCofre());
-    }
+//    public void deleteCofreByNumCofre (Long numCofre) throws Exception {
+//        cofreRepository.deleteById(getCofreByNumCofre(numCofre).getNumeroCofre());
+//    }
 
     public CofreDto alteraTipoCofreByNumCofre(Long numCofre, String tipoCofre) throws Exception {
         var dto = cofreRepository.findById(numCofre);
