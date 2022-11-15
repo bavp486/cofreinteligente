@@ -66,6 +66,11 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.0.1.Final</version>
 		</dependency>
+			<dependency>
+				<groupId>software.aws.rds</groupId>
+				<artifactId>aws-mysql-jdbc</artifactId>
+				<version>1.1.1</version>
+			</dependency>
 	</dependencies>
 
 	<build>
