@@ -1,4 +1,4 @@
-package br.com.bra.cofreinteligente.Utils;
+package br.com.bra.cofreinteligente.service;
 
 
 import br.com.bra.cofreinteligente.entity.Cofre;
@@ -6,14 +6,11 @@ import br.com.bra.cofreinteligente.entity.Movimentacoes;
 import br.com.bra.cofreinteligente.entity.SaldoCofre;
 import br.com.bra.cofreinteligente.entity.SaldoConta;
 import br.com.bra.cofreinteligente.repository.*;
-import br.com.bra.cofreinteligente.service.SaldoCofreService;
-import br.com.bra.cofreinteligente.service.SaldoContaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
