@@ -1,6 +1,6 @@
 package br.com.bra.cofreinteligente.controller;
 
-import br.com.bra.cofreinteligente.Utils.CSVService;
+import br.com.bra.cofreinteligente.service.CSVService;
 import br.com.bra.cofreinteligente.dto.SaldoContaDto;
 import br.com.bra.cofreinteligente.service.SaldoContaService;
 import org.springframework.beans.factory.annotation.Autowired;

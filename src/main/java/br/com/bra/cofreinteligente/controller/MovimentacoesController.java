@@ -1,13 +1,12 @@
 package br.com.bra.cofreinteligente.controller;
 
-import br.com.bra.cofreinteligente.Utils.CSVService;
+import br.com.bra.cofreinteligente.service.CSVService;
 import br.com.bra.cofreinteligente.dto.MovimentacoesDto;
 import br.com.bra.cofreinteligente.service.MovimentacoesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 @RestController
