@@ -26,7 +26,8 @@ public class SaldoCofre {
     @ManyToOne
     @JoinColumn(name = "numeroCofre")
     private Cofre cofre;
-   @JsonFormat(pattern = "dd-MM-yyyy")
+
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate data;
     private BigDecimal saldo;
 }

@@ -20,9 +20,9 @@ public class MovimentacoesDto {
     private Long id;
     @NotNull
     private Long numeroCofre;
-
-    private LocalDate data;
     @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate data;
+
     private BigDecimal valorRecolhido;
 
 
